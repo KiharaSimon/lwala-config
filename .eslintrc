@@ -1,0 +1,41 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": "@medic/eslint-config",
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module"
+    },
+    "ignorePatterns": ["tests/inputs/*.js", "contact-summary.js"],
+    "rules": {
+        "ignoreImports": 0,
+        "eqeqeq": "error",
+        "no-bitwise": "error",
+        "no-buffer-constructor": "error",
+        "no-caller": "error",
+        "no-console": "off",
+        "eol-last": 0,
+        "no-var": 0,
+        "max-len": "off",
+        "no-undef": "error",
+        "no-unexpected-multiline": "error",
+        "no-unreachable": "error",
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "space-infix-ops": ["error", { "int32Hint": false }],
+        "keyword-spacing": ["error"],
+        "no-irregular-whitespace": "warn",
+        "semi": [
+            "error",
+            "always"
+        ],
+        "quotes": [
+            "error",
+            "single",
+            {
+            "allowTemplateLiterals": true
+            }
+        ]
+    }
+  }

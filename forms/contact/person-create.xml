@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms">
+  <h:head>
+    <h:title>Add Person</h:title>
+    <model>
+      <instance>
+        <data id="contact:person:create" prefix="J1!contact:person:create!" delimiter="#" version="2018-02-06">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <user>
+              <facility_id/>
+            </user>
+          </inputs>
+          <person>
+            <type>person</type>
+            <parent>PARENT</parent>
+            <name/>
+            <date_of_birth/>
+            <date_of_birth_method/>
+            <person_age_in_years/>
+            <person_age_in_months/>
+            <ephemeral_dob>
+              <dob_method/>
+              <dob_calendar/>
+              <age_years/>
+              <age_months>0</age_months>
+              <ephemeral_months/>
+              <ephemeral_years/>
+              <dob_approx/>
+              <dob_raw/>
+              <dob_iso/>
+              <dob_debug/>
+            </ephemeral_dob>
+            <sex/>
+            <relationship_to_primary_caregiver/>
+            <relationship_pc_other/>
+            <has_birth_certificate/>
+            <cert_serial_number/>
+            <has_mch_booklet/>
+            <phone_number/>
+            <is_orphan/>
+            <in_school/>
+            <has_disability/>
+            <disability_type/>
+            <specify_disability/>
+            <delivered_in_facility/>
+            <exclusively_breastfed/>
+            <mother_attended_anc/>
+            <slept_under_treated_net/>
+            <n_treated_net/>
+            <is_pregnant/>
+            <geolocation/>
+            <n_is_pregnant/>
+            <n_is_not_pregnant/>
+            <pregnant_at_registration/>
+          </person>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </data>
+      </instance>
+      <bind nodeset="/data/inputs" relevant="false()"/>
+      <bind nodeset="/data/inputs/user/facility_id" type="string"/>
+      <bind nodeset="/data/person/type" type="string"/>
+      <bind nodeset="/data/person/parent" type="string"/>
+      <bind nodeset="/data/person/name" type="string" required="true()"/>
+      <bind nodeset="/data/person/date_of_birth" type="string" calculate="../ephemeral_dob/dob_iso"/>
+      <bind nodeset="/data/person/date_of_birth_method" type="string" calculate="../ephemeral_dob/dob_method"/>
+      <bind nodeset="/data/person/person_age_in_years" type="string" calculate="floor( difference-in-months(  /data/person/date_of_birth , today() ) div 12 )"/>
+      <bind nodeset="/data/person/person_age_in_months" type="string" calculate="difference-in-months(  /data/person/date_of_birth , today() )"/>
+      <bind nodeset="/data/person/ephemeral_dob/dob_method" type="select1"/>
+      <bind nodeset="/data/person/ephemeral_dob/dob_calendar" type="date" jr:constraintMsg="Date must be before today" required="true()" constraint="floor(decimal-date-time(.)) &lt;= floor(decimal-date-time(today()))" relevant="selected(../dob_method,'date')"/>
+      <bind nodeset="/data/person/ephemeral_dob/age_years" type="int" jr:constraintMsg="Age must be between 0 and 130" required="true()" constraint=". &gt;= 0 and . &lt;= 130" relevant="selected(../dob_method,'current_age')"/>
+      <bind nodeset="/data/person/ephemeral_dob/age_months" type="int" jr:constraintMsg="Months must between 0 and 11" required="true()" constraint=". &gt;= 0 and . &lt;= 11" relevant="selected(../dob_method,'current_age')"/>
+      <bind nodeset="/data/person/ephemeral_dob/ephemeral_months" type="string" calculate="if(format-date-time(today(),&quot;%m&quot;) - ../age_months &lt; 0, format-date-time(today(),&quot;%m&quot;) - ../age_months + 12, format-date-time(today(),&quot;%m&quot;) - ../age_months)"/>
+      <bind nodeset="/data/person/ephemeral_dob/ephemeral_years" type="string" calculate="if(format-date-time(today(),&quot;%m&quot;) - ../age_months &lt; 0, format-date-time(today(),&quot;%Y&quot;) - ../age_years - 1, format-date-time(today(),&quot;%Y&quot;) -../age_years)"/>
+      <bind nodeset="/data/person/ephemeral_dob/dob_approx" type="string" calculate="date(concat(string( /data/person/ephemeral_dob/ephemeral_years ),'-',if( /data/person/ephemeral_dob/ephemeral_months &lt;10, concat('0',string( /data/person/ephemeral_dob/ephemeral_months )),  /data/person/ephemeral_dob/ephemeral_months ),'-',string(format-date-time(today(), &quot;%d&quot;))))"/>
+      <bind nodeset="/data/person/ephemeral_dob/dob_raw" type="string" calculate="if(not(selected( ../dob_method,'current_age')), 
+../dob_calendar,
+../dob_approx)"/>
+      <bind nodeset="/data/person/ephemeral_dob/dob_iso" type="string" calculate="format-date-time(decimal-date-time(../dob_raw),&quot;%Y-%m-%d&quot;)"/>
+      <bind nodeset="/data/person/ephemeral_dob/dob_debug" readonly="true()" type="string" relevant="false()"/>
+      <bind nodeset="/data/person/sex" type="select1" required="true()"/>
+      <bind nodeset="/data/person/relationship_to_primary_caregiver" type="select1" jr:constraintMsg="Invalid selection. 
+Check on the relationship to the caregiver and the age i.e. a spouse cannot be under 15 years.
+Check the relationship to the caregiver and the gender i.e. a sister cannot be male and a brother cannot be female." required="true()" constraint="not(selected(., 'sister') and ../sex = 'male' ) and not(selected(., 'brother') and ../sex = 'female') and not(selected(., 'spouse') and ../person_age_in_years &lt; 15)"/>
+      <bind nodeset="/data/person/relationship_pc_other" type="string" required="true()" relevant=" /data/person/relationship_to_primary_caregiver  = 'other'"/>
+      <bind nodeset="/data/person/has_birth_certificate" type="select1" required="true()" relevant=" /data/person/person_age_in_years  &lt; 5"/>
+      <bind nodeset="/data/person/cert_serial_number" type="string" required="true()" relevant=" /data/person/has_birth_certificate  = 'yes'"/>
+      <bind nodeset="/data/person/has_mch_booklet" type="select1" required="true()" relevant=" /data/person/person_age_in_years  &lt; 5"/>
+      <bind nodeset="/data/person/phone_number" type="string" jr:constraintMsg="Use one of the following formats 07XX XXX XXX or 01XX XXX XXX." constraint="regex(.,'^\+254\s?(\d{3}\s?){3}|^(07|01)\d{2}\s?(\d{3}\s?){2}$')" relevant=" /data/person/relationship_to_primary_caregiver  = 'spouse'"/>
+      <bind nodeset="/data/person/is_orphan" type="select1" required="true()" relevant=" /data/person/person_age_in_years  &lt; 18 and  /data/person/ephemeral_dob/dob_iso  != '' and  /data/person/relationship_to_primary_caregiver  != 'child' and  /data/person/relationship_to_primary_caregiver  != 'spouse'"/>
+      <bind nodeset="/data/person/in_school" type="select1" required="true()" relevant=" /data/person/person_age_in_years  &gt;=6 and  /data/person/person_age_in_years  &lt; 18 and  /data/person/ephemeral_dob/dob_iso  != ''"/>
+      <bind nodeset="/data/person/has_disability" type="select1" required="true()"/>
+      <bind nodeset="/data/person/disability_type" type="select" required="true()" relevant=" /data/person/has_disability  = 'yes'"/>
+      <bind nodeset="/data/person/specify_disability" type="string" required="true()" relevant="(count-selected( /data/person/disability_type )&gt;0 and selected( /data/person/disability_type , 'other')) or selected( /data/person/disability_type ,'other')"/>
+      <bind nodeset="/data/person/delivered_in_facility" type="select1" required="true()" relevant=" /data/person/person_age_in_years  &lt; 1 and  /data/person/person_age_in_months  &lt; 6 and  /data/person/ephemeral_dob/dob_iso  != ''"/>
+      <bind nodeset="/data/person/exclusively_breastfed" type="select1" required="true()" relevant=" /data/person/person_age_in_years  &lt; 1 and  /data/person/person_age_in_months  &lt; 6 and  /data/person/ephemeral_dob/dob_iso  != ''"/>
+      <bind nodeset="/data/person/mother_attended_anc" type="select1" required="true()" relevant=" /data/person/person_age_in_years  &lt; 1 and  /data/person/person_age_in_months  &lt; 11 and  /data/person/ephemeral_dob/dob_iso  != ''"/>
+      <bind nodeset="/data/person/slept_under_treated_net" type="select1" required="true()"/>
+      <bind nodeset="/data/person/n_treated_net" readonly="true()" type="string" relevant=" /data/person/slept_under_treated_net  = 'false'"/>
+      <bind nodeset="/data/person/is_pregnant" type="select1" required="true()" relevant=" /data/person/sex  = 'female' and  /data/person/person_age_in_years  &gt;=10 and  /data/person/person_age_in_years  &lt;= 60"/>
+      <bind nodeset="/data/person/geolocation" type="string" calculate="concat(../../inputs/meta/location/lat, concat(' ', ../../inputs/meta/location/long))"/>
+      <bind nodeset="/data/person/n_is_pregnant" readonly="true()" type="string" relevant=" /data/person/is_pregnant ='yes'"/>
+      <bind nodeset="/data/person/n_is_not_pregnant" readonly="true()" type="string" relevant=" /data/person/is_pregnant ='no'"/>
+      <bind nodeset="/data/person/pregnant_at_registration" type="string" calculate="if( /data/person/is_pregnant  = 'yes', 'true', 'false')"/>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group ref="/data/inputs">
+      <group ref="/data/inputs/user">
+        <input ref="/data/inputs/user/facility_id">
+          <label>Facility ID for the parent user</label>
+        </input>
+      </group>
+    </group>
+    <group ref="/data/person">
+      <input appearance="hidden" ref="/data/person/type">
+        <label>Person Type</label>
+        <hint>mandatory</hint>
+      </input>
+      <input appearance="hidden" ref="/data/person/parent">
+        <label>Parent</label>
+        <hint>mandatory</hint>
+      </input>
+      <input ref="/data/person/name">
+        <label>Names</label>
+      </input>
+      <group ref="/data/person/ephemeral_dob">
+        <select1 appearance="horizontal" ref="/data/person/ephemeral_dob/dob_method">
+          <label>Method to select date of birth</label>
+          <item>
+            <label>Date (preferred)</label>
+            <value>date</value>
+          </item>
+          <item>
+            <label>Current age</label>
+            <value>current_age</value>
+          </item>
+        </select1>
+        <input ref="/data/person/ephemeral_dob/dob_calendar">
+          <label>Date of birth</label>
+          <hint>Date of Birth</hint>
+        </input>
+        <input ref="/data/person/ephemeral_dob/age_years">
+          <label>Age</label>
+          <hint>Age in years</hint>
+        </input>
+        <input ref="/data/person/ephemeral_dob/age_months">
+          <label>Months</label>
+          <hint>And how many months?</hint>
+        </input>
+        <input ref="/data/person/ephemeral_dob/dob_debug">
+          <label>Months: <output value=" /data/person/ephemeral_dob/ephemeral_months "/>
+Year: <output value=" /data/person/ephemeral_dob/ephemeral_years "/>
+DOB Approx: <output value=" /data/person/ephemeral_dob/dob_approx "/>
+DOB Calendar: <output value=" /data/person/ephemeral_dob/dob_calendar "/>
+DOB ISO: <output value=" /data/person/ephemeral_dob/dob_iso "/></label></input>
+      </group>
+      <select1 appearance="horizontal" ref="/data/person/sex">
+        <label>Gender</label>
+        <item>
+          <label>Female</label>
+          <value>female</value>
+        </item>
+        <item>
+          <label>Male</label>
+          <value>male</value>
+        </item>
+      </select1>
+      <select1 ref="/data/person/relationship_to_primary_caregiver">
+        <label>What is the relationship to the household head?</label>
+        <item>
+          <label>Spouse</label>
+          <value>spouse</value>
+        </item>
+        <item>
+          <label>Child</label>
+          <value>child</value>
+        </item>
+        <item>
+          <label>Grandchild</label>
+          <value>grandchild</value>
+        </item>
+        <item>
+          <label>Brother</label>
+          <value>brother</value>
+        </item>
+        <item>
+          <label>Sister</label>
+          <value>sister</value>
+        </item>
+        <item>
+          <label>Other</label>
+          <value>other</value>
+        </item>
+      </select1>
+      <input ref="/data/person/relationship_pc_other">
+        <label>Specify other:</label>
+      </input>
+      <select1 appearance="horizontal" ref="/data/person/has_birth_certificate">
+        <label>Does <output value=" /data/person/name "/> have a birth certificate?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/data/person/cert_serial_number">
+        <label>What is the serial number?</label>
+      </input>
+      <select1 appearance="horizontal" ref="/data/person/has_mch_booklet">
+        <label>Does <output value=" /data/person/name "/> have a mother and child health handbook?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input appearance="numbers" ref="/data/person/phone_number">
+        <label>Spouse Phone Number</label>
+        <hint>Use one of the following formats: +254 7XX XXX XXX or 07XX XXX XXX</hint>
+      </input>
+      <select1 appearance="horizontal" ref="/data/person/is_orphan">
+        <label>Is <output value=" /data/person/name "/> an orphan?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/data/person/in_school">
+        <label>Is <output value=" /data/person/name "/> going to school?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/data/person/has_disability">
+        <label>Does <output value=" /data/person/name "/> have any known disability?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select ref="/data/person/disability_type">
+        <label>Which one?</label>
+        <item>
+          <label>Visual</label>
+          <value>visual</value>
+        </item>
+        <item>
+          <label>Hearing</label>
+          <value>hearing</value>
+        </item>
+        <item>
+          <label>Speech</label>
+          <value>speech</value>
+        </item>
+        <item>
+          <label>Physical</label>
+          <value>physical</value>
+        </item>
+        <item>
+          <label>Mental</label>
+          <value>mental</value>
+        </item>
+        <item>
+          <label>Other</label>
+          <value>other</value>
+        </item>
+      </select>
+      <input ref="/data/person/specify_disability">
+        <label>Specify:</label>
+      </input>
+      <select1 appearance="horizontal" ref="/data/person/delivered_in_facility">
+        <label>Was the child delivered in a health facility?</label>
+        <item>
+          <label>Yes</label>
+          <value>true</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>false</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/data/person/exclusively_breastfed">
+        <label>Is the child exclusively breastfeeding?</label>
+        <item>
+          <label>Yes</label>
+          <value>true</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>false</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/data/person/mother_attended_anc">
+        <label>Did the mother attend 4 or more ANC visits?</label>
+        <item>
+          <label>Yes</label>
+          <value>true</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>false</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/data/person/slept_under_treated_net">
+        <label>Did <output value=" /data/person/name "/> sleep under an insecticide treated net?</label>
+        <item>
+          <label>Yes</label>
+          <value>true</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>false</value>
+        </item>
+      </select1>
+      <input ref="/data/person/n_treated_net">
+        <label>**MESSAGE TO THE CHV: Educate on the importance of sleeping under an insecticide treated net consistently.**</label>
+      </input>
+      <select1 appearance="horizontal" ref="/data/person/is_pregnant">
+        <label>Is <output value=" /data/person/name "/> pregnant?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/data/person/n_is_pregnant">
+        <label>**Please complete a pregnancy registration for <output value=" /data/person/name "/> after registration.**</label>
+      </input>
+      <input ref="/data/person/n_is_not_pregnant">
+        <label>**Please complete an FP form for <output value=" /data/person/name "/> after registration.**</label>
+      </input>
+    </group>
+  </h:body>
+</h:html>
