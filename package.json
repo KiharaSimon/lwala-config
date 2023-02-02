@@ -1,0 +1,37 @@
+{
+  "name": "ug-vht",
+  "version": "0.1.0",
+  "description": "Uganda VHT Configuration",
+  "scripts": {
+    "eslint": "npx eslint *.json *.js 'test/**/*.js' 'scripts/**/*.js'",
+    "lint-sql": "sqlfluff lint --dialect postgres",
+    "test": "npm run eslint && npm run compile-forms && npm run compile-app-settings && npm run unittest",
+    "compile-app-settings": "npx cht --no-check compile-app-settings",
+    "compile-forms": "npx cht --no-check convert-app-forms convert-contact-forms",
+    "unittest": "TZ=Africa/Kampala mocha test/**/*.spec.js --timeout 25000 --slow 500",
+    "unittest-win": "SET TZ=Africa/Kampala && mocha test/**/*.spec.js --timeout 25000 --slow 500",
+    "dev-form": "ls -R1a forms/app/*.xlsx | entr ./node_modules/medic-conf/src/bin/medic-conf.js convert-app-forms -- "
+  },
+  "devDependencies": {
+    "@medic/eslint-config": "^1.1.0",
+    "chai": "^4.2.0",
+    "chai-exclude": "^1.0.8",
+    "chai-like": "^1.1.1",
+    "chai-things": "^0.2.0",
+    "cht-conf-test-harness": "^2.4.0",
+    "cht-nootils": "^4.0.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-json": "^2.0.1",
+    "lodash": "^4.17.21",
+    "mocha": "^6.1.4",
+    "rewire": "^4.0.1",
+    "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "fast-csv": "^4.3.6",
+    "fractional": "^1.0.0",
+    "luxon": "^1.27.0"
+  }
+}

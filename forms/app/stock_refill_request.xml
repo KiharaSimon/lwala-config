@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms">
+  <h:head>
+    <h:title>Stock Refill Request</h:title>
+    <model>
+      <instance>
+        <stock_refill_request id="vht_consumption_log" prefix="J1!vht_consumption_log!" delimiter="#" version="2021/04/23">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <source>user</source>
+            <source_id/>
+            <contact>
+              <_id>0</_id>
+              <name/>
+            </contact>
+          </inputs>
+          <refill_group>
+            <stock_status/>
+            <known_requested_items/>
+            <other_Items jr:template="">
+              <other_items_name/>
+            </other_Items>
+          </refill_group>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </stock_refill_request>
+      </instance>
+      <instance id="contact-summary"/>
+      <bind nodeset="/stock_refill_request/inputs" relevant="./source='user'"/>
+      <bind nodeset="/stock_refill_request/inputs/source" type="string"/>
+      <bind nodeset="/stock_refill_request/inputs/source_id" type="string"/>
+      <bind nodeset="/stock_refill_request/inputs/contact/_id" type="db:health_center" required="true()"/>
+      <bind nodeset="/stock_refill_request/inputs/contact/name" type="string"/>
+      <bind nodeset="/stock_refill_request/refill_group/stock_status" type="select1" required="true()"/>
+      <bind nodeset="/stock_refill_request/refill_group/known_requested_items" type="select" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes'"/>
+      <bind nodeset="/stock_refill_request/refill_group/other_Items" relevant=" /stock_refill_request/refill_group/stock_status ='yes'"/>
+      <bind nodeset="/stock_refill_request/refill_group/other_Items/other_items_name" type="string" required="true()"/>
+      <bind nodeset="/stock_refill_request/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/stock_refill_request/inputs">
+      <label>Patient</label>
+      <input appearance="hidden" ref="/stock_refill_request/inputs/source">
+        <label>Source</label>
+      </input>
+      <input appearance="hidden" ref="/stock_refill_request/inputs/source_id">
+        <label>Source ID</label>
+      </input>
+      <group ref="/stock_refill_request/inputs/contact">
+        <label></label>
+        <input appearance="db-object" ref="/stock_refill_request/inputs/contact/_id">
+          <label></label>
+        </input>
+        <input appearance="hidden" ref="/stock_refill_request/inputs/contact/name">
+          <label>Name</label>
+        </input>
+      </group>
+    </group>
+    <group ref="/stock_refill_request/refill_group">
+      <label>Stock Refill</label>
+      <select1 ref="/stock_refill_request/refill_group/stock_status">
+        <label>Do you have low stock for some of the items?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select ref="/stock_refill_request/refill_group/known_requested_items">
+        <label>Select the item you need to refill.</label>
+        <item>
+          <label>First Line Anti-Malarial (ACT – Coartem)</label>
+          <value>ACT</value>
+        </item>
+        <item>
+          <label>Zinc Co-pack</label>
+          <value>zinc</value>
+        </item>
+        <item>
+          <label>Amoxicillin Dispersible</label>
+          <value>amoxicillin</value>
+        </item>
+        <item>
+          <label>Malaria RDTs</label>
+          <value>malaria_rdts</value>
+        </item>
+        <item>
+          <label>Progestin Only Pill</label>
+          <value>pop</value>
+        </item>
+        <item>
+          <label>Injectible DMPA</label>
+          <value>dmpa</value>
+        </item>
+        <item>
+          <label>Misoprostol Tablets</label>
+          <value>misoprostol</value>
+        </item>
+        <item>
+          <label>Combined Oral Contraceptive (COC)</label>
+          <value>coc</value>
+        </item>
+        <item>
+          <label>Condoms</label>
+          <value>condoms</value>
+        </item>
+        <item>
+          <label>Emergency Contraceptives</label>
+          <value>contraceptives</value>
+        </item>
+        <item>
+          <label>Rectal Artesunate</label>
+          <value>rectal</value>
+        </item>
+        <item>
+          <label>Sayana Press</label>
+          <value>sayana</value>
+        </item>
+        <item>
+          <label>Gloves</label>
+          <value>gloves</value>
+        </item>
+      </select>
+      <group ref="/stock_refill_request/refill_group/other_Items">
+        <label>Other Items</label>
+        <repeat nodeset="/stock_refill_request/refill_group/other_Items">
+          <input ref="/stock_refill_request/refill_group/other_Items/other_items_name">
+            <label>item</label>
+          </input>
+        </repeat>
+      </group>
+    </group>
+  </h:body>
+</h:html>

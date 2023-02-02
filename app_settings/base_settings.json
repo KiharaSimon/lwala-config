@@ -1,167 +1,33 @@
 {
-  "permissions": {
-    "can_export_messages": [
-      "national_admin",
-      "district_admin",
-      "analytics"
-    ],
-    "can_export_forms": [
-      "national_admin",
-      "district_admin",
-      "analytics"
-    ],
-    "can_export_contacts": [
-      "national_admin",
-      "district_admin",
-      "supervisor"
-    ],
-    "can_export_audit": [
-      "national_admin"
-    ],
-    "can_export_feedback": [
-      "national_admin"
-    ],
-    "can_export_server_logs": [
-      "national_admin"
-    ],
-    "can_access_directly": [
-      "national_admin"
-    ],
-    "can_view_analytics": [
-      "district_admin",
-      "analytics"
-    ],
-    "can_view_data_records": [
-      "national_admin",
-      "district_admin",
-      "analytics",
-      "gateway",
-      "supervisor"
-    ],
-    "can_view_unallocated_data_records": [
-      "national_admin",
-      "district_admin",
-      "gateway",
-      "supervisor"
-    ],
-    "can_edit": [
-      "national_admin",
-      "district_admin",
-      "gateway",
-      "supervisor"
-    ],
-    "can_update_messages": [
-      "national_admin",
-      "district_admin",
-      "gateway",
-      "supervisor"
-    ],
-    "can_create_records": [
-      "national_admin",
-      "district_admin",
-      "gateway",
-      "supervisor"
-    ],
-    "can_view_tasks_tab": [
-      "national_admin",
-      "district_admin",
-      "supervisor"
-    ],
-    "can_configure": [
-      "national_admin"
-    ],
-    "can_view_reports_tab": [
-      "national_admin"
-    ],
-    "can_view_analytics_tab": [
-      "national_admin",
-      "district_admin"
-    ],
-    "can_view_contacts_tab": [
-      "national_admin",
-      "district_admin",
-      "supervisor"
-    ],
-    "can_logout": [
-      "national_admin",
-      "supervisor"
-    ],
-    "can_edit_profile": [
-      "national_admin"
-    ],
-    "can_view_users": [
-      "national_admin"
-    ],
-    "can_update_users": [
-      "national_admin"
-    ],
-    "can_update_people": [
-      "national_admin"
-    ],
-    "can_update_places": [
-      "national_admin"
-    ],
-    "can_create_users": [
-      "national_admin"
-    ],
-    "can_create_people": [
-      "national_admin",
-      "district_admin"
-    ],
-    "can_create_places": [
-      "national_admin",
-      "district_admin"
-    ],
-    "can_view_tasks": [
-      "district_admin",
-      "supervisor"
-    ],
-    "can_view_messages": [],
-    "can_view_messages_tab": [],
-    "can_view_reports": [
-      "national_admin",
-      "district_admin",
-      "supervisor"
-    ],
-    "can_view_contacts": [
-      "national_admin",
-      "district_admin",
-      "supervisor"
-    ],
-    "can_delete_reports": [],
-    "can_bulk_delete_reports": [],
-    "can_delete_contacts": [],
-    "can_delete_messages": [],
-    "can_delete_users": [],
-    "can_access_gateway_api": [],
-    "can_log_out_on_android": [
-      "national_admin",
-      "supervisor"
-    ],
-    "can_view_message_action": [],
-    "can_view_call_action": [
-      "national_admin",
-      "district_admin"
-    ],
-    "can_verify_reports": [],
-    "can_view_last_visited_date": [
-      "national_admin",
-      "district_admin",
-      "supervisor"
-    ],
-    "can_write_wealth_quintiles": [],
-    "can_update_reports": [
-      "national_admin",
-      "district_admin",
-      "supervisor"
-    ],
-    "can_edit_verification": [],
-    "can_view_outgoing_messages": [],
-    "can_export_all": [
-      "national_admin"
-    ]
+  "locales": null,
+  "locale": "en",
+  "locale_outgoing": "en",
+  "date_format": "ddd, MMM Do, YYYY",
+  "reported_date_format": "ddd, MMM Do, YYYY [at] h:mm A",
+  "forms_only_mode": false,
+  "place_hierarchy_types": [
+    "district_hospital",
+    "health_center"
+  ],
+  "default_responses": {
+    "start_date": "1970-01-01"
   },
-  "setup_complete": true,
+  "district_admins_access_unallocated_messages": false,
+  "public_access": false,
+  "default_country_code": 254,
+  "gateway_number": "+254754234567",
+  "kujua-reporting": [
+    {
+      "code": "",
+      "reporting_freq": "weekly"
+    }
+  ],
+  "schedule_morning_hours": 6,
+  "schedule_morning_minutes": 0,
+  "schedule_evening_hours": 20,
+  "schedule_evening_minutes": 0,
+  "synthetic_date": "",
+  "contact_display_short": "clinic.name",
   "roles": {
     "national_admin": {
       "name": "usertype.national-manager"
@@ -170,33 +36,302 @@
       "name": "usertype.district-manager",
       "offline": true
     },
-    "supervisor": {
-      "name": "usertype.supervisor",
+    "data_entry": {
+      "name": "usertype.data-entry"
+    },
+    "analytics": {
+      "name": "usertype.analytics"
+    },
+    "gateway": {
+      "name": "usertype.gateway"
+    },
+    "branch_manager": {
+      "name": "usertype.branch_manager",
+      "offline": true
+    },
+    "facility_in_charge": {
+      "name": "usertype.facility_in_charge",
+      "offline": true
+    },
+    "chew": {
+      "name": "usertype.chew",
+      "offline": true
+    },
+    "hro": {
+      "name": "usertype.hro",
+      "offline": true
+    },
+    "subcounty_focal_person": {
+      "name": "usertype.subcounty_focal_person",
       "offline": true
     }
   },
-  "locales": [
-    {
-      "code": "en",
-      "name": "English"
-    },
-    {
-      "code": "sw",
-      "name": "Swahili"
-    }
-  ],
-  "locale": "en",
-  "locale_outgoing": "en",
-  "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=2&_locale=en#/generic-anc.json",
-  "date_format": "ddd, MMM Do, YYYY",
-  "reported_date_format": "ddd, MMM Do, YYYY [at] h:mm A",
-  "forms_only_mode": false,
-  "default_responses": {
-    "start_date": "1970-01-01"
+  "permissions": {
+    "can_verify_reports": [
+      "national_admin",
+      "district_admin",
+      "branch_manager"
+    ],
+    "can_update_messages": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_export_forms": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_view_analytics_tab": [
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_bulk_delete_reports": [],
+    "can_create_places": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_view_tasks": [
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_view_reports_tab": [
+      "national_admin"
+    ],
+    "can_update_users": [],
+    "can_view_tasks_tab": [
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_view_messages_tab": [],
+    "can_view_contacts_tab": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_view_unallocated_data_records": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_update_people": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_access_directly": [
+      "national_admin"
+    ],
+    "can_view_messages": [],
+    "can_export_contacts": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_delete_users": [],
+    "can_update_places": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_edit_profile": [
+      "national_admin"
+    ],
+    "can_view_analytics": [
+      "district_admin",
+      "analytics",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_log_out_on_android": [],
+    "can_delete_contacts": [],
+    "can_view_reports": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_update_reports": [
+      "district_admin",
+      "branch_manager",
+      "chew"
+    ],
+    "can_write_wealth_quintiles": [],
+    "can_view_message_action": [
+      "national_admin",
+      "district_admin",
+      "branch_manager"
+    ],
+    "can_view_data_records": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "gateway",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_export_feedback": [
+      "national_admin"
+    ],
+    "can_export_messages": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_create_people": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_edit": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_create_records": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_view_contacts": [
+      "national_admin",
+      "district_admin",
+      "hro",
+      "subcounty_focal_person",
+      "chew",
+      "facility_in_charge",
+      "branch_manager"
+    ],
+    "can_logout": [
+      "national_admin"
+    ],
+    "can_delete_reports": [],
+    "can_create_users": [],
+    "can_delete_messages": [],
+    "can_view_call_action": [
+      "national_admin",
+      "district_admin",
+      "branch_manager"
+    ],
+    "can_export_audit": [
+      "national_admin"
+    ],
+    "can_view_last_visited_date": [
+      "district_admin"
+    ],
+    "can_view_users": [],
+    "can_access_gateway_api": [
+      "gateway"
+    ],
+    "can_export_server_logs": [
+      "national_admin"
+    ],
+    "can_configure": [
+      "national_admin"
+    ],
+    "can_view_moh_515_tasks": [
+      "chew",
+      "subcounty_focal_person"
+    ]
   },
-  "district_admins_access_unallocated_messages": false,
-  "default_country_code": 256,
-  "gateway_number": "+256754234567",
+  "changes_controller": {
+    "reiterate_changes": true,
+    "changes_limit": 100,
+    "debounce_interval": 200
+  },
+  "uhc": {
+    "contacts_default_sort": "",
+    "visit_count": {
+      "month_start_date": 1,
+      "visit_count_goal": 0
+    }
+  },
+  "setup_complete": true,
+  "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=2&_locale=en#/generic-anc.json",
+  "anc_forms": {
+    "registration": "",
+    "registrationLmp": "ANCR",
+    "visit": "ANCV",
+    "delivery": "D",
+    "flag": "F"
+  },
+  "translations": null,
   "outgoing_phone_replace": {
     "match": "",
     "replace": ""
@@ -207,28 +342,9 @@
       "replace": ""
     }
   ],
-  "schedule_morning_hours": 6,
-  "schedule_morning_minutes": 0,
-  "schedule_evening_hours": 20,
-  "schedule_evening_minutes": 0,
-  "synthetic_date": "",
   "id_format": "1111",
-  "contact_display_short": "clinic.name",
   "statistics_submission": "none",
   "statistics_submission_number": "",
-  "kujua-reporting": [
-    {
-      "code": "",
-      "reporting_freq": "weekly"
-    }
-  ],
-  "anc_forms": {
-    "registration": "",
-    "registrationLmp": "ANCR",
-    "visit": "ANCV",
-    "delivery": "D",
-    "flag": "F"
-  },
   "alerts": [
     {
       "form": "",
@@ -274,6 +390,10 @@
               {
                 "content": "",
                 "locale": ""
+              },
+              {
+                "locale": "en",
+                "content": null
               }
             ]
           }
@@ -285,6 +405,10 @@
             {
               "content": "",
               "locale": ""
+            },
+            {
+              "locale": "en",
+              "content": null
             }
           ],
           "recipient": ""
@@ -315,6 +439,10 @@
               {
                 "content": "",
                 "locale": ""
+              },
+              {
+                "locale": "en",
+                "content": null
               }
             ]
           }
@@ -326,9 +454,40 @@
             {
               "content": "",
               "locale": ""
+            },
+            {
+              "locale": "en",
+              "content": null
             }
           ],
           "event_type": "report_accepted",
+          "recipient": ""
+        }
+      ]
+    }
+  ],
+  "schedules": [
+    {
+      "name": "",
+      "summary": "",
+      "description": "",
+      "start_from": "",
+      "messages": [
+        {
+          "message": [
+            {
+              "content": "",
+              "locale": ""
+            },
+            {
+              "locale": "en",
+              "content": null
+            }
+          ],
+          "group": 1,
+          "offset": "",
+          "send_day": "monday",
+          "send_time": "",
           "recipient": ""
         }
       ]
@@ -348,6 +507,10 @@
             {
               "content": "",
               "locale": ""
+            },
+            {
+              "locale": "en",
+              "content": null
             }
           ]
         }
@@ -359,6 +522,10 @@
           {
             "content": "",
             "locale": ""
+          },
+          {
+            "locale": "en",
+            "content": null
           }
         ],
         "event_type": "patient_not_found",
@@ -366,26 +533,112 @@
       }
     ]
   },
-  "contact_types": [
+  "forms": {},
+  "transitions": {
+    "multi_report_alerts": true,
+    "muting": true,
+    "death_reporting": true
+  },
+  "contact_summary": "var ContactSummary = {}; !function(e,t){if('object'==typeof exports&&'object'==typeof module)module.exports=t();else if('function'==typeof define&&define.amd)define([],t);else{var r=t();for(var n in r)('object'==typeof exports?exports:e)[n]=r[n]}}(ContactSummary,(function(){return function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}return r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){'undefined'!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:'Module'}),Object.defineProperty(e,'__esModule',{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&'object'==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,'default',{enumerable:!0,value:e}),2&t&&'string'!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,'a',t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p='',r(r.s=0)}([function(e,t,r){'use strict';r.r(t),r.d(t,'fields',(function(){return a})),r.d(t,'cards',(function(){return n})),r.d(t,'context',(function(){return o}));var n=[],o={},a=[],i=Date.now(),l={getMostRecentTimestamp:function(e,t){var r=this.getMostRecentReport(e,t);return r&&r.reported_date},getMostRecentReport:function(e,t){var r=null;return e.forEach((function(e){e.form!==t||e.deleted||r&&!(e.reported_date>r.reported_date)||(r=e)})),r}};if('person'===contact.type||'clinic'===contact.type){var s='person'===contact.type?'mute_person':'household_mute',c=l.getMostRecentTimestamp(reports,s)||0,_=l.getMostRecentTimestamp(reports,'muting_approved')||0,p=l.getMostRecentTimestamp(reports,'muting_rejected')||0,u=Math.max(c,_,p);o.is_muting_pending=0!==c&&c>=u&&i-c<26784e5}if('person'===contact.type){var f=l.getMostRecentTimestamp(reports,'death_report')||0,d=l.getMostRecentTimestamp(reports,'death_report_undo')||0,m=['death_report_confirm','death_report_undo_reject'].map((function(e){return l.getMostRecentTimestamp(reports,e)||0})),g=['death_report_undo_confirm','death_report_reject'].map((function(e){return l.getMostRecentTimestamp(reports,e)||0})),v=Math.max.apply(null,m),h=Math.max.apply(null,g);o.deceased=!!contact.date_of_death,o.is_deceased_approve_pending=f>Math.max(v,h,d)&&i-f<26784e5,o.is_deceased_undo_approve_pending=d>Math.max(v,h,f)&&i-d<26784e5,o.is_deceased_approve_pending&&a.push({label:'Status',value:'Death report pending supervisor approval'}),o.is_deceased_undo_approve_pending&&a.push({label:'Status',value:'Death report undo awaiting supervisor approval'})}if('health_center'===contact.type&&(o.parent0=lineage[0],o.has_act_mrdt_check=!0,o.administers_dmpa=!0,o.monthly_stock_done=!1,reports.forEach((function(e){'monthly_stock_update_chv'===e.form&&(o.monthly_stock_done=!0)}))),'person'===contact.type){var b,y;a.push.apply(a,[{label:'contact.age',value:contact.date_of_birth,width:4,filter:'age'},{label:'Phone Number',value:contact.phone||contact.phone_number,width:8,filter:'phone'},{label:'contact.parent',value:lineage,filter:'lineage'}]),o.pregnant=!1,o.is_in_cbds_pilot=!0,o.is_malaria_endemic=!0,o.parent0=lineage[0],o.parent1=lineage[1],o.immunization_registration_done=!1,o.fp_eligible=!1,o.date_of_lmp=null,o.covid_follow_up_count=0,o.covid_other=!1,o.pnc_eligibile=!1,o.refer_tb_testing=!1,o.refer_hiv_testing_counselling=!1,o.refer_hiv_exposed_infant=!1,o.bcg=!1,o.polio0=!1,o.polio1=!1,o.polio2=!1,o.polio3=!1,o.ipv=!1,o.penta1=!1,o.penta2=!1,o.penta3=!1,o.pcv1=!1,o.pcv2=!1,o.pcv3=!1,o.rota1=!1,o.rota2=!1,o.measles_rubella1=!1,o.measles_rubella2=!1;var w=new Date,x=new Date;x.setDate(w.getDate()-315);var M=Math.abs(new Date(w.getTime()-new Date(contact.date_of_birth).getTime()).getUTCFullYear()-1970),D=contact.ephemeral_dob?contact.ephemeral_dob.age_years:contact.age_years?contact.age_years:M;'female'===contact.sex&&D>=15&&D<=49&&(o.fp_eligible=!0),(Math.abs(new Date(w-new Date(contact.date_of_birth))/864e5/30)<7||M>=10&&M<50&&'female'===contact.sex)&&(o.pnc_eligibile=!0),reports.forEach((function(e){if('pregnancy'===e.form){var t=new Date(e.fields.lmp_date);if(o.date_of_lmp=t.toISOString(),reports.filter((function(t){return'postnatal_care'===t.form&&t.reported_date>e.reported_date})).length>0||t<x)return;var r=reports.filter((function(t){return'pregnancy_visit'===t.form&&t.reported_date>e.reported_date}));e.fields&&'positive'===e.fields.group_lmp.pregnancy_result&&(o.pregnant=!0);var n=e.fields.edd_8601;if(r.forEach((function(e){'true'===e.fields.discontinue_follow_up&&''!==e.fields.update_pregnancy.why_not_pregnant&&(o.pregnant=!1),'true'===e.fields.edd_updated&&(n=e.fields.edd_8601)})),!1===o.pregnant)return;(!b||y<e.reported_date)&&(y=e.reported_date,b={label:'contact.profile.pregnancy',fields:[{label:'contact.profile.edd',value:n,filter:'simpleDate'},{label:'contact.profile.visit',value:'contact.profile.visits.of',translate:!0,context:{count:r.length,total:4}}]})}if('fp_registration'===e.form&&!0===o.fp_eligible&&(o.fp_eligible=!1),'covid_19_follow_up'===e.form){var a=e.fields.is_admitted,i=e.fields.is_hospitalised;'true'!==a&&'true'!==i||(o.covid_other=!0);var l=reports.filter((function(e){return'covid_19_follow_up'===e.form}));l.length>0?o.covid_follow_up_count=l.length:l.length<1&&(o.covid_follow_up_count=0)}'home_based_care_follow_up'===e.form&&('true'===e.fields.patient_status&&(o.covid_other=!0));if('immunization_registration'===e.form&&(o.immunization_registration_done=!0),'assessment_endemic'===e.form){'true'===e.fields.assessment_immunization_registration&&(o.immunization_registration_done=!0);var s=e.fields.refer_tb_testing;o.refer_tb_testing='true'===s;var c=e.fields.refer_hiv_testing_counselling;o.refer_hiv_testing_counselling='true'===c;var _=e.fields.refer_hiv_exposed_infant;o.refer_hiv_exposed_infant='true'===_}if('assessment_endemic'===e.form||'immunization_registration'===e.form||'immunization_visit'===e.form||'immunization_referral_follow_up'===e.form){var p=e.fields.bcg_current,u=e.fields.polio0_current,f=e.fields.polio1_current,d=e.fields.penta1_current,m=e.fields.pcv1_current,g=e.fields.rota1_current,v=e.fields.polio2_current,h=e.fields.penta2_current,w=e.fields.pcv2_current,M=e.fields.rota2_current,D=e.fields.polio3_current,j=e.fields.penta3_current,T=e.fields.pcv3_current,R=e.fields.ipv_current,S=e.fields.measles_rubella1_current,z=e.fields.measles_rubella2_current;'true'===p&&(o.bcg=!0),'true'===u&&(o.polio0=!0),'true'===f&&(o.polio1=!0),'true'===d&&(o.penta1=!0),'true'===m&&(o.pcv1=!0),'true'===g&&(o.rota1=!0),'true'===v&&(o.polio2=!0),'true'===h&&(o.penta2=!0),'true'===w&&(o.pcv2=!0),'true'===M&&(o.rota2=!0),'true'===D&&(o.polio3=!0),'true'===j&&(o.penta3=!0),'true'===T&&(o.pcv3=!0),'true'===R&&(o.ipv=!0),'true'===S&&(o.measles_rubella1=!0),'true'===z&&(o.measles_rubella2=!0)}})),b&&(o.pregnant=!0,n.push(b))}else'clinic'!==contact.type&&'health_center'!==contact.type||(o.family_survey_count=0,o.is_before_ke_election=new Date<new Date(2017,8,1),a=[{label:'contact.parent',value:lineage,width:12,filter:'lineage'}],reports.forEach((function(e){'family_survey'===e.form&&e.fields.access_to&&(o.family_survey_count+=1)})),a.push({label:'Equity Assessment done?',value:o.family_survey_count>0?'Yes ('+o.family_survey_count+')':'No'}))}])})); return ContactSummary;",
+  "replication_depth": [
     {
-      "id": "app_instance",
-      "name_key": "contact.type.app_instance",
-      "group_key": "contact.type.app_instance.plural",
-      "create_key": "contact.type.app_instance.new",
-      "edit_key": "contact.type.place.edit",
-      "icon": "cht-icon",
-      "create_form": "form:contact:app_instance:create",
-      "edit_form": "form:contact:app_instance:edit"
+      "role": "branch_manager",
+      "depth": 1
     },
+    {
+      "role": "chew",
+      "depth": 1
+    },
+    {
+      "role": "facility_in_charge",
+      "depth": 1
+    },
+    {
+      "role": "hro",
+      "depth": 1
+    },
+    {
+      "role": "subcounty_focal_person",
+      "depth": 1
+    }
+  ],
+  "multi_report_alerts": [
+    {
+      "name": "CBDS Pilot",
+      "is_report_counted": "function(report, latest_report) {  return (latest_report.contact.parent.parent._id === report.contact.parent.parent._id && latest_report.fields.cbds_contact && latest_report.fields.cbds_contact !== '' && latest_report.fields.suspected_syndromes && latest_report.fields.suspected_syndromes !== ''); }",
+      "num_reports_threshold": 1,
+      "message": "{{contact.name}} has reported {{new_reports.0.fields.suspected_syndromes}} for {{new_reports.0.fields.patient_age_display}} {{new_reports.0.fields.patient_name}} of {{new_reports.0.contact.parent.community_unit}} C.U. Please follow-up and remember to fill the 'response action' form on Medic Mobile.",
+      "recipients": [
+        "+254721685600",
+        "new_report.fields.cbds_contact"
+      ],
+      "time_window_in_days": 1,
+      "forms": [
+        "assessment_endemic"
+      ]
+    }
+  ],
+  "muting": {
+    "mute_forms": [
+      "chp_mute",
+      "muting_approved"
+    ],
+    "unmute_forms": [
+      "chp_unmute",
+      "household_unmute",
+      "unmute_person"
+    ],
+    "validations": {
+      "join_responses": true,
+      "list": []
+    },
+    "messages": [
+      {
+        "translation_key": "",
+        "event_type": "mute",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "unmute",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "already_muted",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "already_unmuted",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "contact_not_found",
+        "recipient": "reporting_unit"
+      }
+    ]
+  },
+  "death_reporting": {
+    "mark_deceased_forms": [
+      "death_report_confirm",
+      "death_report_undo_reject"
+    ],
+    "undo_deceased_forms": [
+      "death_report_undo_confirm",
+      "death_report_reject"
+    ],
+    "date_field": "fields.date_of_death"
+  },
+  "task_days_overdue": {},
+  "contact_types": [
     {
       "id": "district_hospital",
       "name_key": "contact.type.district_hospital",
       "group_key": "contact.type.district_hospital.plural",
       "create_key": "contact.type.district_hospital.new",
       "edit_key": "contact.type.place.edit",
-      "parents": [
-        "app_instance"
-      ],
       "icon": "medic-district-hospital",
       "create_form": "form:contact:district_hospital:create",
       "edit_form": "form:contact:district_hospital:edit"
@@ -425,7 +678,6 @@
       "edit_key": "contact.type.person.edit",
       "primary_contact_key": "clinic.field.contact",
       "parents": [
-        "app_instance",
         "district_hospital",
         "health_center",
         "clinic"
@@ -437,52 +689,1427 @@
       "sort_by_dob": true
     }
   ],
-  "transitions": {
-    "accept_patient_reports": false,
-    "conditional_alerts": false,
-    "default_responses": false,
-    "update_sent_by": false,
-    "registration": false,
-    "update_clinics": false,
-    "update_notifications": false,
-    "update_scheduled_reports": false,
-    "update_sent_forms": false,
-    "generate_patient_id_on_people": false,
-    "death_reporting": true,
-    "mark_for_outbound": false,
-    "muting": true
-  },
-  "death_reporting": {
-    "mark_deceased_forms": ["death_report"],
-    "date_field": "fields.date_of_death"
-  },
-  "muting": {
-    "mute_forms": [
-      "mute"
+  "tasks": {
+    "rules": "define Target {_id: null,contact: null,deleted: null,type: null,pass: null,date: null}define Contact {contact: null,reports: null}define Task {_id: null,deleted: null,doc: null,contact: null,icon: null,date: null,readyStart: null,readyEnd: null,title: null,fields: null,resolved: null,priority: null,priorityLabel: null,reports: null,actions: null}rule GenerateEvents {when {c: Contact}then {var ROLES = {chew: 'chew',facility_in_charge: 'facility_in_charge',hro: 'hro',subcounty_focal_person: 'subcounty_focal_person',branch_manager: 'branch_manager'};var getUserRoles = function() {var name = \"userCtx\";var roles = [];var value = typeof window !== 'undefined' ? \"; \" + document.cookie : '';var parts = value.split(\"; \" + name + \"=\");if (parts.length == 2) {roles = JSON.parse(decodeURIComponent(parts.pop().split(\";\").shift())).roles;}return roles;};var now = Utils.now();var today = new Date();var MS_IN_DAY = 24 * 60 * 60 * 1000;var testMode = typeof testing === 'undefined' ? false : testing;var firstDayOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);var getNextSurveyDate = function(previous_survey_date, days) {var result;if (previous_survey_date) {result = new Date(previous_survey_date);result.setDate(result.getDate() + days);} else {result = new Date();}return result;};var isHighRiskPregnancy = function(pregnancy) {if (pregnancy && pregnancy.fields) {if ((pregnancy.fields.risk_factors && pregnancy.fields.risk_factors != '') ||(pregnancy.fields.danger_signs && pregnancy.fields.danger_signs != '') ||parseInt(pregnancy.fields.patient_age_at_lmp, 10) < 18 ||parseInt(pregnancy.fields.patient_age_at_lmp, 10) > 35 ||pregnancy.fields.hiv_status === 'positive') {return true;}}c.reports.forEach(function(r) {if (r.form == 'pregnancy_visit') {if (r.reported_date >= pregnancy.reported_date) {if (r.fields && r.fields.danger_signs && r.fields.danger_signs != '') {return true;}}}});return false;};var createFamilySurveyTask = function(date) {let schedule = Utils.getSchedule('family-survey');if (schedule) {schedule.events.forEach(function(s) {var survey = createTask(c, s);survey.date = getNextSurveyDate(date, s.days);survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'family_survey', Utils.addDate(survey.date, s.start * -1).setHours(0, 0, 0, 0), Utils.addDate(survey.date, (s.end + 1)).setHours(23, 59, 59, 999));survey.actions.push({type: 'report',form: 'family_survey',label: 'Follow up',content: {source: 'task',contact: c.contact}});emitTask(survey, s);});}return;};var createTask = function(contact, schedule, report) {return new Task({_id: contact.contact._id + '-' + schedule.id,deleted: (contact.contact ? contact.contact.deleted : false) || (report ? report.deleted : false),doc: contact,contact: contact.contact,icon: schedule.icon,priority: schedule.description ? 'high' : '',priorityLabel: schedule.description ? schedule.description : undefined,date: null,readyStart: schedule.start,readyEnd: schedule.end,title: schedule.title,resolved: false,actions: []});};var emitTask = function(task, scheduleEvent) {if (c.contact && c.contact.muted) {return;}if (c.contact && c.contact.date_of_death) {return;}if (Utils.isTimely(task.date, scheduleEvent) || testMode) {emit('task', task);}};var createTargetInstance = function(type, report, pass, index) {index = (typeof index !== 'undefined') ? index : 0;return new Target({_id: report._id + '-' + type + '-' + index,contact: c.contact,deleted: !!report.deleted,type: type,pass: pass,date: report.reported_date});};var emitTargetInstance = function(instance) {emit('target', instance);};var contactAgeInYears = -1;if (c.contact && c.contact.date_of_birth) {var contactDateOfBirth = new Date(c.contact.date_of_birth);if (Utils.isDateValid(contactDateOfBirth)) {let contactAgeInDays = Math.round((today - contactDateOfBirth) / MS_IN_DAY);contactAgeInYears = Math.round(contactAgeInDays / 365);}}var isReproductiveAge = function() {return (contactAgeInYears >= 10 && contactAgeInYears < 50) ? 'true' : 'false';};var hasAccessToEMNCH = function(user) {return true;};var getNextImmunizationSchedule = function(report) {var vaccines = [report.fields.bcg_selected,report.fields.polio0_selected && report.fields.patient_age_in_weeks < 2,report.fields.polio1_selected,report.fields.penta1_selected,report.fields.pcv1_selected,report.fields.rota1_selected,report.fields.polio2_selected,report.fields.penta2_selected,report.fields.pcv2_selected,report.fields.rota2_selected,report.fields.polio3_selected,report.fields.ipv_selected,report.fields.penta3_selected,report.fields.pcv3_selected,report.fields.vitamin_a_selected,report.fields.measles_rubella1_selected,report.fields.deworming_selected,report.fields.measles_rubella2_selected];var immunization_schedule = ['immunizations_2wks','immunizations_2wks','immunizations_6wks','immunizations_6wks','immunizations_6wks','immunizations_6wks','immunizations_10wks','immunizations_10wks','immunizations_10wks','immunizations_10wks','immunizations_14wks','immunizations_14wks','immunizations_14wks','immunizations_14wks','immunizations_6mo','immunizations_9mo','immunizations_12mo','immunizations_18mo'];var vaccines_true = vaccines.filter(function(item) {return item == 'true';});var count_vaccines_true = vaccines_true.length;var age_at_visit = [17, 17, 45, 45, 45, 45, 73, 73, 73, 73, 101, 101, 101, 101, 185, 275, 369, 550];var perceived_age = [14, 14, 42, 42, 42, 42, 70, 70, 70, 70, 98, 98, 98, 98, 182, 272, 366, 547];var first_missing_vaccine_index = vaccines.indexOf('false');var next_immunization_schedule = '';var days_next = 0;var immunization_age_in_days = 0;if ((count_vaccines_true === 2 && vaccines[14] === 'true' && vaccines[16] === 'true') ||(count_vaccines_true === 18) ||(count_vaccines_true === 1 && (vaccines[14] === 'true' || vaccines[16] === 'true'))) {next_immunization_schedule = 'immunizations_24mo';days_next = 185;immunization_age_in_days = 730;} else {next_immunization_schedule = immunization_schedule[first_missing_vaccine_index];days_next = age_at_visit[first_missing_vaccine_index];immunization_age_in_days = perceived_age[first_missing_vaccine_index];}var result = {next_immunization_schedule: next_immunization_schedule,days_next: days_next,immunization_age_in_days: immunization_age_in_days};return result;};if (c.contact != null) {var newestPregnancy = Utils.getMostRecentReport(c.reports, 'pregnancy');var newestPregnancyTimestamp = Utils.getMostRecentTimestamp(c.reports, 'pregnancy');var newestPostnatal = Utils.getMostRecentReport(c.reports, 'postnatal_care');var newestPostnatalTimestamp = Utils.getMostRecentTimestamp(c.reports, 'postnatal_care');var newestPregnancyVisit = Utils.getMostRecentReport(c.reports, 'pregnancy_visit');var newestPregnancyVisitTimestamp = Utils.getMostRecentTimestamp(c.reports, 'pregnancy_visit');var newestDeathReport = Utils.getMostRecentReport(c.reports, 'death_report');var newestImmunizationFollowUp = Utils.getMostRecentReport(c.reports, 'immunization_follow_up');var newestImmunizationFollowUpTimestamp = Utils.getMostRecentTimestamp(c.reports, 'immunization_follow_up');var newestHomeVisit = Utils.getMostRecentReport(c.reports, 'home_visit');var newestHomeVisitTimestamp = Utils.getMostRecentTimestamp(c.reports, 'home_visit');var newestFamilySurvey = Utils.getMostRecentReport(c.reports, 'family_survey');var newestFamilySurveyTimestamp = Utils.getMostRecentTimestamp(c.reports, 'family_survey');var newestPostnatalReferralFollowUp = Utils.getMostRecentReport(c.reports, 'pnc_referral_follow_up');var newestPostnatalReferralFollowUpTimestamp = (newestPostnatalReferralFollowUp && newestPostnatalReferralFollowUp.reported_date || newestPostnatalReferralFollowUp);var newestImmunizationVisitTimestamp = Utils.getMostRecentTimestamp(c.reports, 'immunization_visit');var newestImmunizationReferralFollowUpTimestamp = Utils.getMostRecentTimestamp(c.reports, 'immunization_referral_follow_up');if (c.contact && c.contact.type === 'clinic') {var instance = createTargetInstance('family-registrations', c.contact, true);instance.date = today.getTime();emitTargetInstance(instance);if(!c.contact.muted) {var instance = createTargetInstance('percent-hh-visited', c.contact, false);instance.date = today.getTime();emitTargetInstance(instance);c.reports.forEach(function(r) {if (r.form === 'home_visit' && r.reported_date >= newestHomeVisitTimestamp) {var pass = (r.reported_date >= firstDayOfMonth.getTime() && r.reported_date <= now);var instance = createTargetInstance('percent-hh-visited', c.contact, pass);instance.date = today.getTime();emitTargetInstance(instance);}});}}c.reports.forEach(function(r) {if (c.contact.type === 'person') {if(r.form === 'pregnancy') {var instance = createTargetInstance('pregnancy-registrations', r, true);emitTargetInstance(instance);}if (r.form === 'postnatal_care' && r.fields.delivery_date != '' && r.fields.follow_up_count === '1') {var followup_cutoff = new Date(r.fields.delivery_date);followup_cutoff.setDate(followup_cutoff.getDate() + 2);followup_cutoff.setHours(23, 59, 59);var pass = new Date(r.reported_date) <= followup_cutoff && r.fields.pregnancy_outcome;var instance = createTargetInstance('newborn-visit-48hr', r, pass);emitTargetInstance(instance);}if (r.form === 'assessment' || r.form === 'assessment_endemic' || r.form === 'assessment_follow_up') {if (r.fields.iccm_assessment === 'true') {var instance = createTargetInstance('total-assessments', r, true);emitTargetInstance(instance);}if (r.fields.iccm_assessment === 'true' && parseInt(r.fields.patient_age_in_years) < 1) {var instance = createTargetInstance('assessments-u1', r, true);emitTargetInstance(instance);}if (r.fields.iccm_assessment === 'true' && parseInt(r.fields.patient_age_in_years) < 5) {var instance = createTargetInstance('assessments-u5', r, true);emitTargetInstance(instance);}if ((r.fields.referral_follow_up == 'true' ||(r.form === 'assessment_follow_up' && r.fields.referral_follow_up_needed == 'true')) &&parseInt(r.fields.patient_age_in_years) < 5) {var pass = Utils.isFormSubmittedInWindow(c.reports, 'assessment_follow_up', r.reported_date, new Date(r.reported_date + MS_IN_DAY));var instance = createTargetInstance('u5-referral-followup-24hr', r, pass);emitTargetInstance(instance);}if (r.fields.symptom_fever != '') {var pass = r.fields.symptom_malaria_test && r.fields.symptom_malaria_test.indexOf('Not done') < 0;var instance = createTargetInstance('treatment-mrdt', r, pass);emitTargetInstance(instance);}if (r.fields.is_pos_neg_mrdt == 'true') {var instance = createTargetInstance('assessment-malaria', r, true);emitTargetInstance(instance);}if (r.fields.treat_for_malaria == 'true') {var instance = createTargetInstance('treatment-malaria', r, true);emitTargetInstance(instance);}if (parseInt(r.fields.patient_age_in_years) < 5 && r.fields.group_diagnosis && r.fields.group_diagnosis.gave_zinc == 'yes' && r.fields.group_diagnosis.gave_ors == 'yes') {var instance = createTargetInstance('u5-treatment-zinc-ors', r, true);emitTargetInstance(instance);}if (r.fields.group_diagnosis && r.fields.group_diagnosis.gave_al == 'yes' &&r.fields.group_diagnosis.al_pack && r.fields.group_diagnosis.al_pack != '') {var six_packs_given = parseInt(r.fields.group_diagnosis.al_pack) / 6;for (var index = 0; index < six_packs_given; index++) {emitTargetInstance(createTargetInstance('acts-used', r, true, index));}}}} else if (c.contact && c.contact.type === 'clinic') {if (r.form === 'family_survey' && r.fields.access_to) {var instance = createTargetInstance('family-surveys-conducted', r, true);emitTargetInstance(instance);}}});}if (c.contact && c.contact.type === 'clinic' && user.parent.type !== 'district_hospital') {createFamilySurveyTask(c.contact.reported_date);c.reports.forEach(function(r) {if (r.form === 'family_survey') {createFamilySurveyTask(r.reported_date);}});}if (user && user.parent.type === 'district_hospital' && c.contact && c.contact.type === 'district_hospital') {c.reports.forEach(function(r) {var userRole = getUserRoles()[0] || user.role;var involvedRoles = [ROLES.chew, ROLES.subcounty_focal_person];switch (r.form) {case 'moh-515-summary-' + ROLES.chew + '-verified':case 'moh-515-summary-' + ROLES.subcounty_focal_person + '-verified':case 'moh-515-summary-' + ROLES.subcounty_focal_person + '-rejected':case 'moh-515-summary':if (user.parent._id !== '0e5f05af-bca3-5910-b19d-7ec67d604c6b'){return;}schedule = Utils.getSchedule('moh-515-verified');if (involvedRoles.indexOf(userRole) === -1 && cht.v1.hasPermissions(['can_view_moh_515_tasks']) === false) {return;}if (userRole === ROLES.chew) {if (r.form.endsWith('-verified')) return;if (r.fields.chew_id !== user._id) return;}if (userRole === ROLES.subcounty_focal_person) {if (r.form.endsWith('-rejected')) return;if (r.form.indexOf(userRole) > -1) {return;}if (r.form === 'moh-515-summary') return;}if (userRole === ROLES.branch_manager) {if (r.form === 'moh-515-summary') return;if (r.form.endsWith('-rejected')) return;if (r.form.endsWith('-verified')) return;}if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s, r);task._id = r._id;task.date = Utils.addDate(new Date(r.reported_date), s.days);task.resolved = c.reports.some(function(someReport) {if (someReport.form === 'moh_515_verified') {return someReport.fields.feeding_report_id === r._id;}return false;});var data = {};for (key in r.fields) {if (r.fields.hasOwnProperty(key)) {var nk = key;if (key.startsWith(\"new_\")) {nk = key.replace(\"new_\", \"\");}data[\"input_\" + nk] = r.fields[key];}}task.actions.push({type: \"report\",form: \"moh_515_verified\",label: \"MOH 515 Verification\",content: {source: \"task\",source_id: r._id,contact: c.contact,user_role: userRole,data: data,current_user: user,revision_msg: r.status_text ? r.status_text : ''}});emitTask(task, s);});}break;case 'supervisor-auth-request':var chewId = r.fields.chew_id;if (chewId && chewId === user._id) {schedule = Utils.getSchedule('moh-515-chew-auth');if (schedule) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit._id = r._id;visit.date = Utils.addDate(new Date(r.reported_date), s.days);visit.resolved = c.reports.some(function(someReport) {if (someReport.form === \"dhis2_credentials\") {return someReport.fields._source_id === r._id;} else {return false;}});visit.actions.push({type: 'report',form: 'dhis2_credentials',label: \"DHIS2 Credentials Task\",content: {source: \"task\",source_id: r._id,fields: r.fields}});emitTask(visit, s);});}}}});}if (user && user.parent.type === 'district_hospital' && c.contact && c.contact.type === 'health_center') {c.reports.forEach(function(r) {switch (r.form) {case 'supervisor_monthly_stock':if (r.supervisor && r.supervisor !== user._id) {return;}schedule = Utils.getSchedule('monthly-stock-verification');if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s, r);task._id = r._id;task.date = Utils.addDate(new Date(r.reported_date), s.days);task.resolved = c.reports.some(function(someReport) {if (someReport.form === 'monthly_stock_update_sup') {return someReport.fields.feeding_report_id === r._id;}return false;});task.actions.push({type: 'report',form: 'monthly_stock_update_sup',label: 'Monthly Stock Update Copy',content: {source: 'task',source_id: r._id,form_name: r.form,contact: c.contact,fields: r.fields}});emitTask(task, s);});}break;case 'commodities-approval-request':if (r.fields && r.fields.supervisor !== user._id) {return;}schedule = Utils.getSchedule(\"commodity-verification\");if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s, r);task._id = r._id;task.date = Utils.addDate(new Date(r.reported_date), s.days);task.resolved = c.reports.some(function(someReport) {if (someReport.form === 'commodity_sup_verification') {return someReport.fields.feeding_report_id === r._id;}return false;});task.actions.push({type: 'report',form: 'commodity_sup_verification',label: \"Commodity Verification\",content: {source: \"task\",source_id: r._id,contact: c.contact,fields: r.fields}});emitTask(task, s);});}break;case 'muting-approve-request':if (r.supervisor && r.supervisor !== user._id) {return;}schedule = Utils.getSchedule(\"muting-approval\");if (schedule) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit._id = r._id;visit.date = Utils.addDate(new Date(r.reported_date), s.days);visit.resolved = c.reports.some(function(someReport) {if (someReport.form === \"household_mute_task\") {return (someReport.fields._source_id === r._id) ||(someReport.fields.inputs && r._id === someReport.fields.inputs.source_id);} else {return false;}});visit.actions.push({type: 'report',form: 'household_mute_task',label: \"Muting Request Approval\",content: {source: \"task\",source_id: r._id,muting_context: r.fields.context,entity_name: r.fields.name,muting_reason: r.fields.muting_reason,entity_id: r.fields.id,current_user: user,chw_area_id: r.patient_id,branch_id: r.parent._id,chw_area_name: r.fields.chw_area,household_name: r.fields.hh_name}});emitTask(visit, s);});}break;case 'death_report_undo_approval_request':case 'death_report_approval_request':if (r.supervisor && r.supervisor !== user._id) {return;}schedule = Utils.getSchedule('death-confirmation');if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s, r);task._id = r._id;task.date = Utils.addDate(new Date(r.reported_date), s.days);task.resolved = c.reports.some(function(someReport) {if (someReport.form === 'death_report_confirmation') {return (r._id === someReport.fields._source_id ||someReport.fields.inputs && r._id === someReport.fields.inputs.source_id);}return false;});task.actions.push({type: 'report',form: 'death_report_confirmation',label: 'Death Report Approval',content: {source: 'task',source_id: r._id,form_name: r.form,contact: c.contact,fields: r.fields}});emitTask(task, s);});}break;case 'supervisor_phe_alert':if (r.supervisor && r.supervisor !== user._id) {return;}schedule = Utils.getSchedule('sup-phe-alert');if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s, r);task._id = r._id;task.date = Utils.addDate(new Date(r.reported_date), s.days);task.resolved = c.reports.some(function(someReport) {if (someReport.form === 'supervisor_public_health_events') {return (r._id === someReport.fields._source_id ||someReport.fields.inputs && r._id === someReport.fields.inputs.source_id);}return false;});task.actions.push({type: 'report',form: 'supervisor_public_health_events',label: 'Public Health Event for CHA',content: {source: 'task',source_id: r._id,form_name: r.form,contact: c.contact,fields: r.fields}});emitTask(task, s);});}break;case 'supervisor_cbds_alert':if (r.supervisor && r.supervisor !== user._id) {return;}schedule = Utils.getSchedule('sup-cbds-alert');if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s, r);task._id = r._id;task.date = Utils.addDate(new Date(r.reported_date), s.days);task.resolved = c.reports.some(function(someReport) {if (someReport.form === 'supervisor_cbds_case_report') {return (r._id === someReport.fields._source_id ||someReport.fields.inputs && r._id === someReport.fields.inputs.source_id);}return false;});task.actions.push({type: 'report',form: 'supervisor_cbds_case_report',label: 'CBDS Case Reports For CHA',content: {source: 'task',source_id: r._id,form_name: r.form,contact: c.contact,fields: r.fields}});emitTask(task, s);});}break;case 'supervisor_inventory_tool':if (r.supervisor && r.supervisor !== user._id) {return;}schedule = Utils.getSchedule('sup-inventory-tool');if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s, r);task._id = r._id;task.date = Utils.addDate(new Date(r.reported_date), s.days);task.resolved = c.reports.some(function(someReport) {if (someReport.form === 'extra_inventory_tool_sup') {return (r._id === someReport.fields._source_id ||someReport.fields.inputs && r._id === someReport.fields.inputs.source_id);}return false;});task.actions.push({type: 'report',form: 'extra_inventory_tool_sup',label: 'Extra Inventory Verification',content: {source: 'task',source_id: r._id,form_name: r.form,contact: c.contact,fields: r.fields}});emitTask(task, s);});}break;}})}if (c.contact && c.contact.type === 'person' && user.parent && user.parent.type !== 'district_hospital' && !newestDeathReport) {if (c.contact.pregnant_at_registration === 'true') {let schedule = Utils.getSchedule('register-pregnancy');if (schedule) {schedule.events.forEach(function(s) {var registration = createTask(c, s);registration.date = new Date(c.contact.reported_date);registration.resolved = Utils.getMostRecentReport(c.reports, 'pregnancy') != null;registration.actions.push({type: 'report',form: 'pregnancy',label: 'Follow up',content: {source: 'task',contact: c.contact,}});emitTask(registration, s);});}if (c.contact.lmp_date) {schedule = Utils.getSchedule('postnatal-reminder');if (schedule) {schedule.events.forEach(function(s) {var visit = createTask(c, s);visit.date = Utils.addDate(new Date(c.contact.lmp_date), s.days);visit.resolved = c.contact.reported_date < newestPostnatalTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'postnatal_care', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'postnatal_care',label: 'Follow up',content: {source: 'task',contact: c.contact}});emitTask(visit, s);});}}}if (c.contact.pregnant_at_registration === 'false' && contactAgeInYears >= 15 && contactAgeInYears < 50 && c.contact.sex === 'female') {let schedule = Utils.getSchedule('fp-registration');if (schedule) {schedule.events.forEach(function(s) {var task = createTask(c, s);task.date = getNextSurveyDate(new Date(c.contact.reported_date), s.days);task.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_registration', Utils.addDate(task.date, s.start * -1).getTime(), Utils.addDate(task.date, (s.end + 1)).getTime());task.actions.push({type: 'report',form: 'fp_registration',label: 'Follow up',content: {source: 'task',contact: c.contact,}});emitTask(task, s);});}}if (c.contact && c.contact.type === 'person' && c.contact.parent.parent) {var contact_dob = new Date(c.contact.date_of_birth);var age_at_registration = Math.round((c.contact.reported_date - contact_dob) / MS_IN_DAY / 365);if (age_at_registration < 1.5) {var schedule = Utils.getSchedule('u1-follow-up');if (schedule) {schedule.events.forEach(function(s) {var survey = createTask(c, s);survey.date = new Date(Utils.addDate(contact_dob, s.days));survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'u1_follow_up', Utils.addDate(survey.date, s.start * -1).getTime(), Utils.addDate(survey.date, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'u1_follow_up',label: 'Follow up',content: {source: 'task',contact: c.contact,t_follow_up_count: s.id.match(/(\\d+)$/i)[1]}});emitTask(survey, s);});}}}if (c.contact.created_by_doc && c.contact.created_by_doc !== '') {let followUpCount = 1;let deliveryDate = new Date(c.contact.date_of_birth);schedule = Utils.getSchedule('postnatal-healthy');if (schedule) {schedule.events.forEach(function(s) {var visit = createTask(c, s);visit.date = Utils.addDate(new Date(c.contact.date_of_birth), s.days);visit.resolved = c.contact.reported_date < newestPostnatalTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'postnatal_care', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'postnatal_care',label: 'Follow up',content: {source: 'task',contact: c.contact,t_follow_up_count: followUpCount + 1,t_delivery_date: Utils.isDateValid(deliveryDate) ? deliveryDate.toISOString().substring(0, 10) : '',t_was_referred: c.contact.baby_danger_signs !== '' ? true : false}});emitTask(visit, s);});}schedule = Utils.getSchedule('pnc-referral-follow-up');if (schedule && c.contact.baby_danger_signs !== '') {schedule.events.forEach(function(s) {var visit = createTask(c, s);visit.date = Utils.addDate(new Date(c.contact.reported_date), s.days);visit.resolved = c.contact.reported_date < newestPostnatalReferralFollowUpTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'pnc_referral_follow_up', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'pnc_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: c.contact._id,contact: c.contact}});emitTask(visit, s);});}}c.reports.forEach(function(r) {let scheduleName = 'DUMMY_NAME';let followupType = 'DUMMY_NAME';let schedule = null;switch (r.form) {case 'pregnancy':if (!(r.fields && r.fields.lmp_date)) {break;}var lmp = new Date(r.fields.lmp_date);if (isHighRiskPregnancy(r)) {scheduleName = 'pregnancy-high-risk';} else {scheduleName = 'pregnancy-healthy';}schedule = Utils.getSchedule(scheduleName);if (schedule && r.fields.pregnant === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(lmp, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = c.contact.reported_date > visit.date || r.reported_date < newestPregnancyTimestamp || r.reported_date < newestPostnatalTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'pregnancy_visit', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'pregnancy_visit',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_lmp_date: lmp.toISOString()}});emitTask(visit, s);});}schedule = Utils.getSchedule('postnatal-reminder');if (schedule && r && r.fields && r.fields.pregnant === 'true') {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = Utils.addDate(new Date(lmp), s.days);visit.resolved = r.reported_date < newestPostnatalTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'postnatal_care', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'postnatal_care',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}schedule = Utils.getSchedule('fp-registration');if (schedule && r.fields.pregnant === 'false') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_registration', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'fp_registration',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}case 'pregnancy_referral_follow_up':schedule = Utils.getSchedule('pregnancy-acute-conditions');var followUpCount = (r && r.fields && r.fields.follow_up_count) ? parseInt(r.fields.follow_up_count, 10) : 0;if (schedule &&r && r.fields &&r.fields.danger_signs != '' &&r.fields.referral_follow_up_needed != 'false' &&followUpCount <= 3) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = Utils.addDate(new Date(r.reported_date), s.days);visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'pregnancy_referral_follow_up', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime(), followUpCount);visit.actions.push({type: 'report',form: 'pregnancy_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_lmp_date: r.fields.lmp_date ? new Date(r.fields.lmp_date).toISOString() : null,t_follow_up_count: followUpCount + 1}});emitTask(visit, s);});}break;case 'pregnancy_visit':schedule = Utils.getSchedule('pregnancy-healthy');var followUpCount = (r && r.fields && r.fields.follow_up_count) ? parseInt(r.fields.follow_up_count, 10) : 0;var referralFollowUp = false;var lmp_date;if (r.fields.lmp_date == '' && newestPregnancy) {lmp_date = newestPregnancy.fields.lmp_date;} else {lmp_date = r.fields.lmp_date;}if (!lmp_date) {break;}if (r.fields.danger_signs != '' && r.fields.referral_follow_up_needed != 'false') {schedule = Utils.getSchedule('pregnancy-high-risk');referralFollowUp = true;}if (schedule && r && r.fields && r.fields.discontinue_follow_up != 'true') {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = Utils.addDate(new Date(lmp_date), s.days);visit.resolved = r.reported_date < newestPregnancyVisitTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'pregnancy_visit', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime(), followUpCount);visit.actions.push({type: 'report',form: 'pregnancy_visit',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_lmp_date: Utils.isDateValid(lmp_date) ? new Date(lmp_date).toISOString() : null,t_follow_up_count: followUpCount + 1}});emitTask(visit, s);});}schedulePNC = 'DUMMY_NAME';scheduleDate = 'DUMMY_DATE';if (r && r.fields && r.fields.discontinue_follow_up !== 'true') {schedulePNC = 'postnatal-reminder';scheduleDate = new Date(lmp_date);} else if (r && r.fields && r.fields.discontinue_follow_up === 'true' && r.fields.update_pregnancy.why_not_pregnant === 'delivery') {schedulePNC = 'postnatal-delivery';scheduleDate = new Date(r.reported_date);}schedule = Utils.getSchedule(schedulePNC);dueDate = scheduleDate;if (schedule && dueDate) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = new Date(Utils.addDate(dueDate, s.days));visit.resolved = r.reported_date < newestPostnatalTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'postnatal_care', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime(), followUpCount);visit.actions.push({type: 'report',form: 'postnatal_care',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}if (referralFollowUp) {schedule = Utils.getSchedule('pregnancy-acute-conditions');}if (schedule && r && r.fields && referralFollowUp) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = Utils.addDate(new Date(r.reported_date), s.days);visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'pregnancy_referral_follow_up', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime(), followUpCount);visit.actions.push({type: 'report',form: 'pregnancy_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_lmp_date: lmp_date ? new Date(lmp_date).toISOString() : null,t_follow_up_count: followUpCount + 1}});emitTask(visit, s);});}schedule = Utils.getSchedule('anc-follow-up');if (r.fields.discontinue_follow_up != 'true' &&  r.fields.gone_for_anc != 'true'){schedule.events.forEach(function(s) {var visit = createTask(c, s, r);var dueDate = Utils.addDate(new Date(r.reported_date), s.days);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'anc_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime()) || r.reported_date < Math.max(newestPostnatalTimestamp);visit.actions.push({type: 'report',form: 'anc_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,fields: r.fields}});emitTask(visit, s);});}schedule = Utils.getSchedule('death-report');if (r.fields.maternal_death === 'true'){schedule.events.forEach(function(s) {var visit = createTask(c, s, r);var dueDate = Utils.addDate(new Date(r.reported_date), s.days);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'death_report', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'death_report',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,fields: r.fields6}});emitTask(visit, s);});}break;case 'postnatal_care':scheduleName = 'DUMMY_NAME';var followUpCount = r.fields.follow_up_count ? parseInt(r.fields.follow_up_count, 10) : 1;if (r.fields.baby_danger_signs && r.fields.baby_danger_signs !== '') {scheduleName = 'pnc-referral-follow-up';var wasReferred = 'true';} else if (followUpCount <= 1) {scheduleName = 'postnatal-healthy';}schedule = Utils.getSchedule(scheduleName);if (schedule && r.fields.pregnancy_outcome === 'healthy' && r.fields.is_baby_alive === 'true') {schedule.events.forEach(function(s) {var deliveryDate = new Date(r.fields.delivery_date);var baseDate = deliveryDate;if (scheduleName != 'postnatal-healthy' || Utils.isDateValid(deliveryDate) == false) {baseDate = new Date(r.reported_date);}var visitDate = new Date(Utils.addDate(baseDate, s.days));var visit = createTask(c, s, r);visit.date = visitDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'postnatal_care', Utils.addDate(visitDate, s.start * -1).getTime(), Utils.addDate(visitDate, (s.end + 1)).getTime(), followUpCount);visit.actions.push({type: 'report',form: 'postnatal_care',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_follow_up_count: followUpCount + 1,t_delivery_date: Utils.isDateValid(deliveryDate) ? deliveryDate.toISOString().substring(0, 10) : '',t_was_referred: wasReferred}});emitTask(visit, s);});}schedule = Utils.getSchedule('pnc-referral-follow-up');if (schedule && (r.fields.was_referred === 'true' || r.fields.is_referral_case === 'true')) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = Utils.addDate(new Date(r.reported_date), s.days);visit.resolved = r.reported_date < newestPostnatalReferralFollowUpTimestamp || Utils.isFormSubmittedInWindow(c.reports, 'pnc_referral_follow_up', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'pnc_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}schedule = Utils.getSchedule('death-report');if (schedule && r.fields.is_maternal_death === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'death_report', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'death_report',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}schedule = Utils.getSchedule('immunization-referral-follow-up');if (schedule && r.fields.needs_immunization_referral === 'true') {schedule.events.forEach(function(s) {var dueDate = Utils.addDate(new Date(r.reported_date), 2);var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'immunization_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}var next_schedule = getNextImmunizationSchedule(r);if (r.fields.needs_immunization_visit === 'true') {let schedule = Utils.getSchedule('immunization-visit');var date_of_birth = new Date(c.contact.date_of_birth);var dueDate = new Date(Utils.addDate(date_of_birth, next_schedule.days_next));if (schedule) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_visit', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime()) || r.reported_date < newestImmunizationVisitTimestamp;visit.actions.push({type: 'report',form: 'immunization_visit',label: 'Immunization Visit',content: {source: 'task',source_id: r._id,contact: c.contact,immunization_schedule: next_schedule.next_immunization_schedule,immunization_age_in_days: next_schedule.immunization_age_in_days}});emitTask(visit, s);});}}schedule = Utils.getSchedule('fp-follow-up-counselling');if (schedule && r.fields.needs_fp_counselling === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_counselling', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'fp_follow_up_counselling',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}schedule = Utils.getSchedule('fp-registration');if (schedule && r.fields.needs_fp_registration === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_registration', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'fp_registration',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}break;case 'pnc_referral_follow_up':schedule = Utils.getSchedule('pnc-referral-follow-up');if (schedule && r.fields.needs_referral_follow_up === 'true') {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = Utils.addDate(new Date(r.reported_date), s.days);visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'pnc_referral_follow_up', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'pnc_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(visit, s);});}break;case 'assessment':case 'assessment_endemic':case 'symptom_report':followupType = 'treat';if (r.fields) {var reportedDate = new Date(r.reported_date);scheduleName = 'DUMMY_NAME';if (r.fields.dhp_referral_closed === 'false'){if ((r.fields.referral_follow_up === 'true' || r.fields.referral_for_drugs === 'true') && r.fields.treatment_follow_up === 'true') {followupType = 'treat_refer';scheduleName = 'assessment-treatment-referral';} else if (r.fields.referral_follow_up === 'true' || r.fields.referral_for_drugs === 'true') {followupType = 'refer_only';scheduleName = 'assessment-referral';} else if (r.fields.treatment_follow_up === 'true') {followupType = 'treat';scheduleName = 'assessment-treatment';}}schedule = Utils.getSchedule(scheduleName);if (schedule) {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'assessment_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'assessment_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_follow_up_type: followupType,t_follow_up_count: 1}});emitTask(visit, s);});}}schedule = Utils.getSchedule('assessment-referral-other');if (schedule && r.fields.needs_milestones_follow_up === 'true' || r.fields.needs_routine_check_up === 'true') {followupType = 'refer_only';schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'assessment_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'assessment_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_follow_up_type: followupType,t_follow_up_count: 1}});emitTask(visit, s);});}schedule = Utils.getSchedule('muac-follow-up');if (schedule && r.fields.needs_muac_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'muac_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'muac_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('defaulter-follow-up');if (schedule && r.fields.medication_defaulter_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'defaulter_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'defaulter_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('tb-htc-referral-follow-up');if (schedule && r.fields.tb_htc_referral_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'tb_htc_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'tb_htc_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('tb-treatment-follow-up');if (schedule && r.fields.tb_treatment_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'tb_treatment_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'tb_treatment_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('covid-19-follow-up');if (schedule && r.fields.is_covid_suspect === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'covid_19_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'covid_19_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('immunization-registration');if (schedule && r.fields.needs_immunization_registration === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_registration', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'immunization_registration',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}var next_schedule = getNextImmunizationSchedule(r);if (r.fields.needs_immunization_visit === 'true') {let schedule = Utils.getSchedule('immunization-visit');var date_of_birth = new Date(c.contact.date_of_birth);var dueDate = new Date(Utils.addDate(date_of_birth, next_schedule.days_next));if (schedule) {schedule.events.forEach(function(s) {var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_visit', Utils.addDate(visit.date, s.start * -1).getTime(), Utils.addDate(visit.date, (s.end + 1)).getTime()) || r.reported_date < newestImmunizationVisitTimestamp;visit.actions.push({type: 'report',form: 'immunization_visit',label: 'Immunization Visit',content: {source: 'task',source_id: r._id,contact: c.contact,immunization_schedule: next_schedule.next_immunization_schedule,immunization_age_in_days: next_schedule.immunization_age_in_days}});emitTask(visit, s);});}}schedule = Utils.getSchedule('immunization-referral-follow-up');if (schedule && r.fields.needs_immunization_referral_1d === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, 1));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'immunization_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('immunization-referral-follow-up');if (schedule && r.fields.needs_immunization_referral_2d === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, 2));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'immunization_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('immunization-referral-follow-up');if (schedule && r.fields.needs_immunization_referral_7d === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'immunization_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}break;case 'assessment_counter_referral':var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('counter-referral-follow-up');if (schedule) {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'counter_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'counter_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,data: r.fields}});emitTask(visit, s);});}break;case 'counter_referral_follow_up':var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('referral-follow-up');if (schedule) {schedule.events.forEach(function(s) {var nextAppointmentDate = Date.parse(r.fields.date_of_appt);var dueDate = getNextSurveyDate(nextAppointmentDate, s.days);var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}break;case 'defaulter_follow_up':var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('defaulter-follow-up');if (schedule && r.fields.is_referral_case === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'defaulter_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'defaulter_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}break;case 'tb_treatment_follow_up':var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('defaulter-follow-up');if (schedule && r.fields.is_referral_case === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'defaulter_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'defaulter_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('tb-treatment-follow-up');if (schedule && r.fields.is_treatment_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'tb_treatment_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'tb_treatment_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}break;case 'tb_htc_referral_follow_up':var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('tb-treatment-follow-up');if (schedule && r.fields.needs_tb_treatment_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'tb_treatment_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'tb_treatment_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('tb-treatment-follow-up-7-days');if (schedule && r.fields.needs_7_day_tb_treatment_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'tb_treatment_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'tb_treatment_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('defaulter-follow-up');if (schedule && r.fields.needs_defaulter_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'defaulter_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'defaulter_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('tb-htc-referral-follow-up');if (schedule && r.fields.needs_tb_htc_referral_follow_up === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'tb_htc_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'tb_htc_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('tb-htc-referral-follow-up-30-days');if (schedule && r.fields.needs_tb_htc_referral_follow_up_30_days === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'tb_htc_referral_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'tb_htc_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}break;case 'covid_19_follow_up':var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('covid-19-follow-up');if (schedule && (r.fields.went_to_facility === 'true' || r.fields.is_self_monitoring === 'true' || r.fields.test_not_done === 'true' ||r.fields.is_admitted === 'true' || r.fields.is_hospitalised === 'true')) {schedule.events.forEach(function(s) {if (schedule && (r.fields.went_to_facility === 'true' || r.fields.is_self_monitoring === 'true')) {var dueDate = new Date(Utils.addDate(reportedDate, 5));}if (schedule && r.fields.is_admitted === 'true' || r.fields.is_hospitalised === 'true') {var dueDate = new Date(Utils.addDate(reportedDate, 7));}if (schedule && r.fields.test_not_done === 'true') {var dueDate = new Date(Utils.addDate(reportedDate, 10));}var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'covid_19_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'covid_19_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}schedule = Utils.getSchedule('home-based-care-follow-up');if (schedule && r.fields.on_home_based_care === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'home_based_care_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'home_based_care_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}break;case 'home_based_care_follow_up':var reportedDate = new Date(r.reported_date);schedule = Utils.getSchedule('covid-19-follow-up');if (schedule && r.fields.patient_status === 'true') {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, 7));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'covid_19_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'covid_19_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}break;case 'assessment_follow_up':var reportedDate = new Date(r.reported_date);followupType = 'refer_only';scheduleName = 'assessment-referral';var followUpCount = r.fields.follow_up_count ? parseInt(r.fields.follow_up_count, 10) : 1;schedule = Utils.getSchedule('assessment-referral');if (schedule &&r && r.fields &&r.fields.referral_follow_up_needed != 'false' &&followUpCount <= 3) {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'assessment_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime(), followUpCount);visit.actions.push({type: 'report',form: 'assessment_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,t_follow_up_type: followupType,t_follow_up_count: followUpCount + 1}});emitTask(visit, s);});}break;case 'family_survey':schedule = Utils.getSchedule('family-survey');if (schedule) {schedule.events.forEach(function(s) {var survey = createTask(c, s, r);survey.date = getNextSurveyDate(Math.max(c.contact.reported_date, r.reported_date), s.days);survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'family_survey', Utils.addDate(survey.date, s.start * -1).getTime(), Utils.addDate(survey.date, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'family_survey',label: 'Follow up',content: {source: 'task',contact: c.contact}});emitTask(survey, s);});}break;case 'fp_registration':schedule = Utils.getSchedule('fp-follow-chv-refill');if (schedule && (r.fields.refill_condoms === 'true' || r.fields.refill_lam === 'true' || r.fields.refill_calendar === 'true' || r.fields.new_condoms === 'true')) {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 30);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_chv_refill', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_chv_refill',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-short-term');if (schedule && (r.fields.has_risk_factors === 'true' || r.fields.new_short_term_method === 'true' || r.fields.new_lam === 'true' ||r.fields.new_calendar === 'true' || r.fields.method_administered === 'false' || r.fields.current_short_term_fp === 'true')) {var nextRefillDate = Date.parse(r.fields.next_refill_date);schedule.events.forEach(function(s){if (r.fields.current_short_term_fp === 'true') {var taskDate = getNextSurveyDate(nextRefillDate, 3);}if (r.fields.has_risk_factors === 'true' || r.fields.new_short_term_method === 'true' || r.fields.new_lam === 'true' ||r.fields.new_calendar === 'true' || r.fields.method_administered === 'false'){var taskDate = getNextSurveyDate(r.reported_date, 7);}var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_short_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_short_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-long-term');if (schedule && (r.fields.current_iud === 'true' || r.fields.current_implants === 'true' || r.fields.new_long_term_method === 'true')) {schedule.events.forEach(function(s){var lastInsertionDate = Date.parse(r.fields.last_insertion_date);if (r.fields.current_iud === 'true' || r.fields.current_implants === 'true'){var taskDate = getNextSurveyDate(lastInsertionDate, 365);}if (r.fields.new_long_term_method === 'true'){var taskDate = getNextSurveyDate(r.reported_date, 7);}var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_long_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_long_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-counselling');if (schedule && (r.fields.fear_side_effects === 'true' || r.fields.partner_refuse === 'true' || r.fields.need_more_information  === 'true' ||r.fields.cant_pay_now === 'true' || r.fields.traditional_method === 'true')) {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 30);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_counselling', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_counselling',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-uninterested-user');if (schedule && r.fields.not_interested === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 30);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_uninterested_user', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_uninterested_user',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}break;case 'fp_follow_up_counselling':schedule = Utils.getSchedule('fp-follow-up-short-term');if (schedule && (r.fields.has_risk_factors === 'true' || r.fields.cant_afford === 'true' || r.fields.on_short_term_fp === 'true' || r.fields.method_not_administered === 'true')) {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_short_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_short_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-uninterested-user');if (schedule && r.fields.fp_uninterested === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 30);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_uninterested_user', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_uninterested_user',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-long-term');if (schedule && r.fields.on_long_term_fp === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var  survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_long_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_long_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-chv-refill');if (schedule && r.fields.on_condom === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 28);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_chv_refill', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_chv_refill',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}break;case 'fp_follow_up_uninterested_user':schedule = Utils.getSchedule('fp-follow-up-uninterested-user');if (schedule && r.fields.uninterested_follow_up === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 180);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_uninterested_user', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_uninterested_user',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-short-term');if (schedule && (r.fields.has_risk_factors === 'true' || r.fields.on_short_term_fp === 'true' || r.fields.is_method_administered === 'false')) {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_short_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_short_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-long-term');if (schedule && r.fields.on_long_term_fp === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_long_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_long_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-chv-refill');if (schedule && r.fields.on_condoms === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 28);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_chv_refill', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_chv_refill',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-side-effects');if (schedule && r.fields.is_method_administered === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_side_effects', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_side_effects',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}break;case 'fp_follow_up_side_effects':schedule = Utils.getSchedule('fp-follow-up-side-effects');if (schedule && r.fields.is_referral_case === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_side_effects', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_side_effects',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}break;case 'fp_follow_up_chv_refill':schedule = Utils.getSchedule('fp-follow-up-short-term');if (schedule && (r.fields.has_risk_factors === 'true' || (r.fields.want_to_refill === 'true' && r.fields.on_short_term_fp === 'true') ||r.fields.cant_pay === 'true' || r.fields.method_is_administered === 'false')) {schedule.events.forEach(function(s) {var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_short_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_short_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-chv-refill');if (schedule && (r.fields.on_condoms === 'true' || r.fields.on_cocs === 'true') && r.fields.want_to_refill === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 23);var survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_chv_refill', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_chv_refill',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-long-term');if (schedule && r.fields.want_to_refill === 'true' && r.fields.on_long_term_fp === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_long_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_long_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-counselling');if (schedule && (r.fields.partner_refuse === 'true'|| r.fields.side_effects  === 'true' || r.fields.traditional_method === 'true')) {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 30);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_counselling', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_counselling',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-side-effects');if (schedule && r.fields.method_is_administered === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_side_effects', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_side_effects',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}break;case 'fp_follow_up_long_term':schedule = Utils.getSchedule('fp-follow-up-counselling');if (schedule && r.fields.on_counselling === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 30);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_counselling', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_counselling',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-long-term');if (schedule && (r.fields.on_implants === 'true' || r.fields.on_iud === 'true' || r.fields.cant_pay_now === 'true' ||r.fields.wasnt_available === 'true')) {schedule.events.forEach(function(s){var lastInsertionDate = Date.parse(r.fields.last_insertion_date);if (r.fields.cant_pay_now === 'true' || r.fields.wasnt_available === 'true') {var taskDate = getNextSurveyDate(r.reported_date, 7);}if (r.fields.on_implants === 'true'){var taskDate = getNextSurveyDate(lastInsertionDate, 1095);}if (r.fields.on_iud === 'true') {var taskDate = getNextSurveyDate(lastInsertionDate, 1825);}var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_long_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_long_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-chv-refill');if (schedule && (r.fields.on_dmpa_im === 'true' || r.fields.on_cocs === 'true' || r.fields.on_pops === 'true' || r.fields.on_condoms === 'true')) {schedule.events.forEach(function(s){var nextRefillDate = Date.parse(r.fields.next_date_of_refill);if (r.fields.on_cocs === 'true' || r.fields.on_pops === 'true' || r.fields.on_condoms === 'true'){var taskDate = getNextSurveyDate(nextRefillDate, 28);}if (r.fields.on_dmpa_im === 'true') {var taskDate = getNextSurveyDate(nextRefillDate, 85);}var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_chv_refill', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_chv_refill',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-side-effects');if (schedule && r.fields.is_referral_case === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_side_effects', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_side_effects',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}break;case 'fp_follow_up_short_term':schedule = Utils.getSchedule('fp-follow-up-counselling');if (schedule && (r.fields.on_counselling === 'true' || r.fields.spouse_not_happy === 'true' || r.fields.no_reason === 'true')) {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 30);var survey = createTask(c, s, r);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_counselling', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_counselling',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-short-term');if (schedule && (r.fields.cant_afford === 'true' || r.fields. not_available === 'true' || r.fields.on_cocs === 'true' || r.fields.on_pops === 'true' ||r.fields.on_condoms === 'true' || r.fields.on_dmpa_im === 'true')){schedule.events.forEach(function(s){var lastRefillDate = Date.parse(r.fields.last_refill_date);if (r.fields.cant_afford === 'true' || r.fields. not_available === 'true'){var taskDate = getNextSurveyDate(r.reported_date, 7);}if (r.fields.on_cocs === 'true' || r.fields.on_pops === 'true' || r.fields.on_condoms === 'true'){var taskDate = getNextSurveyDate(r.reported_date, 28);}if (r.fields.on_dmpa_im === 'true') {var taskDate = getNextSurveyDate(lastRefillDate, 85);}var survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_short_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_short_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-long-term');if (schedule && (r.fields.on_implants === 'true' || r.fields.on_iud === 'true')) {schedule.events.forEach(function(s){var lastInsertionDate = Date.parse(r.fields.last_insertion_date);if (r.fields.on_implants === 'true'){var taskDate = getNextSurveyDate(lastInsertionDate, 1095);}if (r.fields.on_iud === 'true') {var taskDate = getNextSurveyDate(lastInsertionDate, 1825);}var survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_long_term', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_long_term',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-chv-refill');if (schedule && (r.fields.on_dmpa_im === 'true' || r.fields.on_cocs === 'true' || r.fields.on_pops === 'true' || r.fields.on_condoms === 'true')) {schedule.events.forEach(function(s){var nextRefillDate = Date.parse(r.fields.last_refill_date);if (r.fields.on_cocs === 'true' || r.fields.on_pops === 'true' || r.fields.on_condoms === 'true'){var taskDate = getNextSurveyDate(nextRefillDate, 28);}if (r.fields.on_dmpa_im === 'true') {var taskDate = getNextSurveyDate(nextRefillDate, 85);}var survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_chv_refill', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_chv_refill',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}schedule = Utils.getSchedule('fp-follow-up-side-effects');if (schedule && r.fields.is_referral_case === 'true') {schedule.events.forEach(function(s){var taskDate = getNextSurveyDate(r.reported_date, 7);let survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'fp_follow_up_side_effects', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'fp_follow_up_side_effects',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}break;case 'u1_follow_up':if (hasAccessToEMNCH(user)) {if (r.fields.needs_immunization_follow_up === 'true') {let schedule = Utils.getSchedule('immunization-follow-up');if (schedule) {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'immunization_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}}if (r.fields.needs_muac_follow_up === 'true') {let schedule = Utils.getSchedule('muac-follow-up');if (schedule) {schedule.events.forEach(function(s) {var dueDate = new Date(Utils.addDate(reportedDate, s.days));var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'muac_follow_up', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime());visit.actions.push({type: 'report',form: 'muac_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(visit, s);});}}}break;case 'immunization_registration':var reportedDate = new Date(r.reported_date);if (r.fields.needs_immunization_follow_up === 'true' ){schedule = Utils.getSchedule('immunization-referral-follow-up');var taskDate = null;if (r.fields.needs_immunization_follow_up === 'true' && r.fields.child_under_2_wks === 'true') {taskDate = getNextSurveyDate(reportedDate, 2);}if (r.fields.needs_immunization_follow_up === 'true' && r.fields.child_under_2_wks === 'false') {taskDate = getNextSurveyDate(reportedDate, 7);}if(schedule){schedule.events.forEach(function(s){let survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_referral_follow_up', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'immunization_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact}});emitTask(survey, s);});}}var next_schedule = getNextImmunizationSchedule(r);if (r.fields.needs_immunization_follow_up === 'false') {schedule = Utils.getSchedule('immunization-visit');var dueDate = null;var date_of_birth = new Date(c.contact.date_of_birth);dueDate = getNextSurveyDate(date_of_birth, next_schedule.days_next);if (schedule) {schedule.events.forEach(function(s) {let survey = createTask(c, s);survey.date = dueDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_visit', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime()) || r.reported_date < newestImmunizationVisitTimestamp;survey.actions.push({type: 'report',form: 'immunization_visit',label: 'Immunization Visit',content: {source: 'task',source_id: r._id,contact: c.contact,immunization_schedule: next_schedule.next_immunization_schedule,immunization_age_in_days: next_schedule.immunization_age_in_days}});emitTask(survey, s);});}}break;case 'immunization_referral_follow_up':case 'immunization_follow_up':case 'immunization_visit':var reportedDate = new Date(r.reported_date);if (r.fields.is_referral_case === 'true' || r.fields.needs_immunization_follow_up === 'true') {schedule = Utils.getSchedule('immunization-referral-follow-up');var taskDate = null;taskDate = getNextSurveyDate(reportedDate, 7);if (schedule) {schedule.events.forEach(function(s) {let survey = createTask(c, s);survey.date = taskDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_referral_follow_up', Utils.addDate(taskDate, s.start * -1).getTime(), Utils.addDate(taskDate, (s.end + 1)).getTime());survey.actions.push({type: 'report',form: 'immunization_referral_follow_up',label: 'Follow up',content: {source: 'task',source_id: r._id,contact: c.contact,}});emitTask(survey, s);});}}var next_schedule = getNextImmunizationSchedule(r);if (r.fields.needs_immunization_follow_up === 'false' || r.fields.is_referral_case === 'false') {schedule = Utils.getSchedule('immunization-visit');var dueDate = null;var date_of_birth = new Date(c.contact.date_of_birth);dueDate = getNextSurveyDate(date_of_birth, next_schedule.days_next);if (schedule) {schedule.events.forEach(function(s) {let survey = createTask(c, s);survey.date = dueDate;survey.resolved = Utils.isFormSubmittedInWindow(c.reports, 'immunization_visit', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, (s.end + 1)).getTime()) || r.reported_date < newestImmunizationVisitTimestamp;survey.actions.push({type: 'report',form: 'immunization_visit',label: 'Immunization Visit',content: {source: 'task',source_id: r._id,contact: c.contact,immunization_schedule: next_schedule.next_immunization_schedule,immunization_age_in_days: next_schedule.immunization_age_in_days}});emitTask(survey, s);});}}break;}});}if (user && user.parent.type !== 'district_hospital' && c.contact && c.contact.type === 'health_center'){c.reports.forEach(function(r) {let scheduleName = 'DUMMY_NAME';let followupType = 'DUMMY_NAME';let schedule = null;var reportedDate = new Date(r.reported_date);switch (r.form) {case 'monthly_stock_update_chv':if(r.fields && r.fields.monthly_stock_update_task === 'true'){let schedule = Utils.getSchedule('monthly-stock-update-chv');if (schedule) {schedule.events.forEach(function(s) {var dueDate = getNextSurveyDate(r.reported_date, s.days);var visit = createTask(c, s, r);visit.date = dueDate;visit.resolved = Utils.isFormSubmittedInWindow(c.reports, 'monthly_stock_update_chv', Utils.addDate(dueDate, s.start * -1).getTime(), Utils.addDate(dueDate, s.end, true).getTime());visit.actions.push({type: 'report',form: 'monthly_stock_update_chv',label: 'Follow Up',content: {source: 'task',contact: c.contact}});emitTask(visit, s);});}}break;}});}emit('_complete', { _id: true });}}",
+    "schedules": [
+      {
+        "name": "monthly-stock-update-chv",
+        "events": [
+          {
+            "id": "monthly-stock-update-chv",
+            "days": 28,
+            "start": 1,
+            "end": 7,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Monthly Stock Update",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "monthly-stock-verification",
+        "events": [
+          {
+            "id": "monthly-stock-verification",
+            "days": 0,
+            "start": 0,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Monthly Stock Verification",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "commodity-verification",
+        "events": [
+          {
+            "id": "commodity-verification",
+            "days": 0,
+            "start": 0,
+            "end": 21,
+            "icon": "area",
+            "title": [
+              {
+                "content": "Commodity Verification",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "anc-follow-up",
+        "events": [
+          {
+            "id": "anc-follow-up",
+            "days": 7,
+            "start": 1,
+            "end": 1,
+            "icon": "pregnancy",
+            "title": [
+              {
+                "content": "ANC follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "moh-515-chew-auth",
+        "events": [
+          {
+            "id": "moh-515-chew-auth-task",
+            "days": 0,
+            "start": 0,
+            "end": 21,
+            "icon": "area",
+            "title": [
+              {
+                "content": "MOH 515 Credentials",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "moh-515-verified",
+        "events": [
+          {
+            "id": "moh-515-verify-task",
+            "days": 0,
+            "start": 0,
+            "end": 21,
+            "icon": "household",
+            "title": [
+              {
+                "content": "MOH 515 Verification",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "muting-approval",
+        "events": [
+          {
+            "id": "muting-approval-task",
+            "days": 0,
+            "start": 0,
+            "end": 30,
+            "icon": "mute-household",
+            "title": [
+              {
+                "content": "Muting Request Approval Task",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "assessment-treatment",
+        "events": [
+          {
+            "id": "treatment-followup-1",
+            "days": 2,
+            "start": 2,
+            "end": 2,
+            "icon": "treatment",
+            "title": [
+              {
+                "content": "Treatment follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "assessment-treatment-referral",
+        "events": [
+          {
+            "id": "treatment-referral-followup-1",
+            "days": 1,
+            "start": 1,
+            "end": 3,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Treat and refer follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Referral made",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "assessment-referral",
+        "events": [
+          {
+            "id": "referral-followup-1",
+            "days": 1,
+            "start": 1,
+            "end": 3,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Referral follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Referral made",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "assessment-referral-other",
+        "events": [
+          {
+            "id": "assessment-referral-other",
+            "days": 7,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Referral follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Referral made",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "counter-referral-follow-up",
+        "events": [
+          {
+            "id": "counter-referral-follow-up",
+            "days": 0,
+            "start": 0,
+            "end": 7,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Counter Referral Follow Up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "referral-follow-up",
+        "events": [
+          {
+            "id": "referral-follow-up",
+            "days": 2,
+            "start": 0,
+            "end": 7,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Referral Follow Up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Referral made",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "family-survey",
+        "events": [
+          {
+            "id": "survey-1",
+            "days": 0,
+            "start": 7,
+            "end": 28,
+            "icon": "survey",
+            "title": [
+              {
+                "content": "Survey",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "survey-2",
+            "days": 365,
+            "start": 7,
+            "end": 28,
+            "icon": "survey",
+            "title": [
+              {
+                "content": "Survey",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "add-children",
+        "events": [
+          {
+            "id": "child-1",
+            "days": 0,
+            "start": 1,
+            "end": 28,
+            "icon": "child",
+            "title": [
+              {
+                "content": "Child registration",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Child registration",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "add-pregnancy",
+        "events": [
+          {
+            "id": "add-pregnancy",
+            "days": 0,
+            "start": 1,
+            "end": 28,
+            "icon": "pregnancy-4",
+            "title": [
+              {
+                "content": "New pregnancy",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Register pregnancy for {{contact.name}}",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "pregnancy-high-risk",
+        "events": [
+          {
+            "id": "pregnancy-high-risk-1",
+            "days": 30,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-1",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-2",
+            "days": 60,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-1",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-3",
+            "days": 90,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-1",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-4",
+            "days": 120,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-2",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-5",
+            "days": 150,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-2",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-6",
+            "days": 180,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-3",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-7",
+            "days": 210,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-3",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-8",
+            "days": 240,
+            "start": 10,
+            "end": 10,
+            "icon": "pregnancy-4",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-high-risk-9",
+            "days": 270,
+            "start": 10,
+            "end": 6,
+            "icon": "pregnancy-4",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "High risk",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "pregnancy-healthy",
+        "events": [
+          {
+            "id": "pregnancy-1",
+            "days": 84,
+            "start": 7,
+            "end": 30,
+            "icon": "pregnancy-1",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-2",
+            "days": 140,
+            "start": 14,
+            "end": 30,
+            "icon": "pregnancy-2",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-3",
+            "days": 196,
+            "start": 7,
+            "end": 21,
+            "icon": "pregnancy-3",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-4",
+            "days": 252,
+            "start": 5,
+            "end": 21,
+            "icon": "pregnancy-4",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy-5",
+            "days": 280,
+            "start": 5,
+            "end": 5,
+            "icon": "pregnancy-4",
+            "title": [
+              {
+                "content": "Pregnancy follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "register-pregnancy",
+        "events": [
+          {
+            "id": "register-pregnancy",
+            "days": 0,
+            "start": 1,
+            "end": 28,
+            "icon": "pregnancy-1",
+            "title": [
+              {
+                "content": "Register pregnancy",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "postnatal-delivery",
+        "events": [
+          {
+            "id": "postnatal-delivery",
+            "days": 0,
+            "start": 1,
+            "end": 3,
+            "icon": "mother-child",
+            "title": [
+              {
+                "content": "{{contact.name}} 1st PNC follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "postnatal-healthy",
+        "events": [
+          {
+            "id": "postnatal-1",
+            "days": 5,
+            "start": 2,
+            "end": 14,
+            "icon": "mother-child",
+            "title": [
+              {
+                "content": "{{contact.name}} 2nd PNC follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "postnatal-2",
+            "days": 42,
+            "start": 2,
+            "end": 14,
+            "icon": "mother-child",
+            "title": [
+              {
+                "content": "{{contact.name}} 3rd PNC follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "postnatal-acute-conditions",
+        "events": [
+          {
+            "id": "postnatal-acute-conditions-1",
+            "days": 1,
+            "start": 1,
+            "end": 14,
+            "icon": "mother-child",
+            "title": [
+              {
+                "content": "Postnatal follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Referral made",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "pregnancy-acute-conditions",
+        "events": [
+          {
+            "id": "pregnancy-acute-conditions-1",
+            "days": 1,
+            "start": 1,
+            "end": 2,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Referral follow up",
+                "locale": "en"
+              }
+            ],
+            "description": [
+              {
+                "content": "Danger signs",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "postnatal-reminder",
+        "events": [
+          {
+            "id": "postnatal-reminder-1",
+            "days": 280,
+            "start": 3,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Delivery follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "sup-phe-alert",
+        "events": [
+          {
+            "id": "sup-phe-alert",
+            "days": 0,
+            "start": 0,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Public Health Event for CHA",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "death-confirmation",
+        "events": [
+          {
+            "id": "death-confirmation-1",
+            "days": 0,
+            "start": 0,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Death approval",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "sup-cbds-alert",
+        "events": [
+          {
+            "id": "sup-cbds-alert",
+            "days": 0,
+            "start": 0,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "CBDS Case Reports For CHA",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "sup-inventory-tool",
+        "events": [
+          {
+            "id": "sup-inventory-tool",
+            "days": 0,
+            "start": 0,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Extra Inventory Verification",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "death-report",
+        "events": [
+          {
+            "id": "death-report",
+            "days": 0,
+            "start": 0,
+            "end": 60,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Death report",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fp-registration",
+        "events": [
+          {
+            "id": "fp-registration",
+            "days": 0,
+            "start": 0,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} FP Registration",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fp-follow-chv-refill",
+        "events": [
+          {
+            "id": "fp-follow-chv-refill",
+            "days": 0,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} FP follow up (CHV refill)",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fp-follow-up-long-term",
+        "events": [
+          {
+            "id": "fp-follow-up-long-term",
+            "days": 0,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "FP follow up (Long term)",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fp-follow-up-short-term",
+        "events": [
+          {
+            "id": "fp-follow-up-short-term",
+            "days": 0,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "FP follow up (Short term)",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fp-follow-up-counselling",
+        "events": [
+          {
+            "id": "fp-follow-up-counselling",
+            "days": 0,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} FP follow up (Counselling)",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fp-follow-up-uninterested-user",
+        "events": [
+          {
+            "id": "fp-follow-up-uninterested-user",
+            "days": 0,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} FP follow up (Uninterested user)",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fp-follow-up-side-effects",
+        "events": [
+          {
+            "id": "fp-follow-up-side-effects",
+            "days": 0,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} FP follow up (Side effects)",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "muac-follow-up",
+        "events": [
+          {
+            "id": "muac-follow-up-1",
+            "days": 1,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "MUAC Follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "defaulter-follow-up",
+        "events": [
+          {
+            "id": "defaulter-follow-up",
+            "days": 7,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Defaulter Follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tb-htc-referral-follow-up",
+        "events": [
+          {
+            "id": "tb-htc-referral-follow-up",
+            "days": 7,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} TB and HTC Referral Follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tb-htc-referral-follow-up-30-days",
+        "events": [
+          {
+            "id": "tb-htc-referral-follow-up-30-days",
+            "days": 30,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} TB and HTC Referral Follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tb-treatment-follow-up",
+        "events": [
+          {
+            "id": "tb-treatment-follow-up",
+            "days": 30,
+            "start": 3,
+            "end": 9,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} TB Treatment Follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tb-treatment-follow-up-7-days",
+        "events": [
+          {
+            "id": "tb-treatment-follow-up-7-days",
+            "days": 7,
+            "start": 3,
+            "end": 3,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} TB Treatment Follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "immunization-registration",
+        "events": [
+          {
+            "id": "immunization-registration",
+            "days": 1,
+            "start": 1,
+            "end": 365,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Immunization Registration",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "immunization-referral-follow-up",
+        "events": [
+          {
+            "id": "immunization-referral-follow-up",
+            "days": 7,
+            "start": 1,
+            "end": 365,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Immunization referral follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "immunization-visit",
+        "events": [
+          {
+            "id": "immunization-visit",
+            "days": 7,
+            "start": 3,
+            "end": 365,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Immunization Visit",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "covid-19-follow-up",
+        "events": [
+          {
+            "id": "covid-19-follow-up",
+            "days": 1,
+            "start": 1,
+            "end": 3,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "Covid-19 Follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "home-based-care-follow-up",
+        "events": [
+          {
+            "id": "home-based-care-follow-up",
+            "days": 7,
+            "start": 3,
+            "end": 7,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} Home Based Care Follow Up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "u1-follow-up",
+        "events": [
+          {
+            "id": "u1-follow-up-1",
+            "days": 91,
+            "start": 3,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "U1 follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "u1-follow-up-2",
+            "days": 183,
+            "start": 2,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "U1 follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "u1-follow-up-3",
+            "days": 275,
+            "start": 2,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "U1 follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "u1-follow-up-4",
+            "days": 365,
+            "start": 2,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "U1 follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "u1-follow-up-5",
+            "days": 549,
+            "start": 2,
+            "end": 30,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "U1 follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "pnc-referral-follow-up",
+        "events": [
+          {
+            "id": "pnc-referral-follow-up-1",
+            "days": 1,
+            "start": 1,
+            "end": 0,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} postnatal referral follow up",
+                "locale": "en"
+              }
+            ]
+          },
+          {
+            "id": "pnc-referral-follow-up-2",
+            "days": 2,
+            "start": 0,
+            "end": 1,
+            "icon": "clinic",
+            "title": [
+              {
+                "content": "{{contact.name}} postnatal referral follow up",
+                "locale": "en"
+              }
+            ]
+          }
+        ]
+      }
     ],
-    "unmute_forms": [
-      "unmute"
-    ]
-  },
-  "replication_depth": [
-    { 
-      "role": "supervisor",
-      "depth": 1,
-      "report_depth": 1
+    "targets": {
+      "enabled": true,
+      "items": [
+        {
+          "type": "count",
+          "id": "pregnancy-registrations",
+          "icon": "pregnancy-4",
+          "goal": 1.3,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "Pregnancies Registered"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "assessments-u1",
+          "icon": "infant",
+          "goal": 8,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "U1 Sick Child Assessments"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "assessments-u5",
+          "icon": "child",
+          "goal": 40,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "U5 Sick Child Assessments"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "total-assessments",
+          "icon": "child",
+          "goal": -1,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "Total Assessments"
+            }
+          ]
+        },
+        {
+          "type": "percent",
+          "id": "newborn-visit-48hr",
+          "icon": "mother-child",
+          "goal": 85,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "% Newborn Care Visit within 48 hours"
+            }
+          ]
+        },
+        {
+          "type": "percent",
+          "id": "u5-referral-followup-24hr",
+          "icon": "clinic",
+          "goal": 85,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "% of Under-5 Referrals Followed-up within 24 hours"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "u5-treatment-zinc-ors",
+          "icon": "treatment",
+          "goal": -1,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "U5 Diarrhoea Treated with Zinc & ORS"
+            }
+          ]
+        },
+        {
+          "type": "percent",
+          "id": "treatment-mrdt",
+          "icon": "malaria",
+          "goal": 100,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "% of Fever Tested with mRDT"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "assessment-malaria",
+          "icon": "treatment",
+          "goal": -1,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "Total Malaria Assessments"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "treatment-malaria",
+          "icon": "treatment",
+          "goal": -1,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "Total Malaria Treatments"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "family-registrations",
+          "icon": "clinic",
+          "goal": -1,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "Total Family Registrations"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "acts-used",
+          "icon": "treatment",
+          "goal": -1,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "ACTs Used(total 6 packs dispensed)"
+            }
+          ]
+        },
+        {
+          "type": "count",
+          "id": "family-surveys-conducted",
+          "icon": "survey",
+          "goal": -1,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "Family Surveys Conducted"
+            }
+          ]
+        },
+        {
+          "type": "percent",
+          "id": "percent-hh-visited",
+          "icon": "survey",
+          "goal": 85,
+          "context": "user.parent && user.parent.parent",
+          "name": [
+            {
+              "locale": "en",
+              "content": "% of Households Visited"
+            }
+          ]
+        }
+      ]
     }
-  ],
-  "replications": [
-    {
-      "fromSuffix": "user-[^\\-]+-meta",
-      "toSuffix": "users-meta",
-      "text_expression": "",
-      "cron": "0 2 * * *"
-    }
-  ],
-  "purge": {
-    "text_expression": "",
-    "run_every_days": 7,
-    "cron": "0 1 * * SAT",
-    "fn": "function (userCtx, contact, reports) {\n\n    const filteredReports = [];\n    const { _id: mostRecentContactReportId } = getMostRecentContactReport(reports) || {};\n\n    function getMostRecentContactReport (reports) {\n      let result = null;\n      reports.forEach(function (report) {\n        if (!report.deleted && (!result || report.reported_date > result.reported_date)) {\n          result = report;\n        }\n      });\n      return result;\n    }\n\n    function addIfNotFiltered (ids) {\n      for (const id of ids) {\n        if (!filteredReports.includes(id) && id !== mostRecentContactReportId) {\n          filteredReports.push(id);\n        }\n      }\n    }\n\n    function timestampAt (days) {\n      return Date.now() - (1000 * 60 * 60 * 24 * days);\n    }\n\n    const timestampAt365 = timestampAt(365);\n\n    const formsToBePurged = [\n      'pregnancy_visit',\n      'pregnancy',\n      'assessment',\n      'assessment_follow_up',\n      'postnatal_care',\n      'family_survey',\n      'muac_follow_up',\n      'family_planning',\n      'immunization_follow_up'\n    ];\n\n    for (const formToBePurged of formsToBePurged) {\n      addIfNotFiltered(\n        reports\n          .filter(r => r.form === formToBePurged && r.reported_date < timestampAt365)\n          .map(r => r._id));\n    }\n\n    return filteredReports;\n  }"
   }
 }

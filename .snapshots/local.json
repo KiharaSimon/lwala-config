@@ -1,0 +1,29 @@
+{
+  "form:stock_refill_request": {
+    "localhost/medic": "lc03gJAkUmUSrX0iKpEw9g=="
+  },
+  "form:contact:clinic:create": {
+    "localhost/medic": "+28wBENuq4DvXAaLKm2+6w=="
+  },
+  "form:contact:clinic:edit": {
+    "localhost/medic": "LEKoNMb/6a5FUPhvbXAXqQ=="
+  },
+  "form:contact:district_hospital:create": {
+    "localhost/medic": "H6QKvFEwVt1VeMWBpdPkhg=="
+  },
+  "form:contact:district_hospital:edit": {
+    "localhost/medic": "jzBuEhx+dKreEhZHTaparQ=="
+  },
+  "form:contact:health_center:create": {
+    "localhost/medic": "63SdHwFe2KwiKcxvPB7tpQ=="
+  },
+  "form:contact:health_center:edit": {
+    "localhost/medic": "JdedkrKMh/gzdoBM2jkqZw=="
+  },
+  "form:contact:person:create": {
+    "localhost/medic": "UBKXDf6BQoL+oN7W084gdQ=="
+  },
+  "form:contact:person:edit": {
+    "localhost/medic": "i1Gz2fBsL1cV6YKVxMXKog=="
+  }
+}
