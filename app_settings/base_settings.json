@@ -1,0 +1,488 @@
+{
+  "permissions": {
+    "can_export_messages": [
+      "national_admin",
+      "district_admin",
+      "analytics"
+    ],
+    "can_export_forms": [
+      "national_admin",
+      "district_admin",
+      "analytics"
+    ],
+    "can_export_contacts": [
+      "national_admin",
+      "district_admin",
+      "supervisor"
+    ],
+    "can_export_audit": [
+      "national_admin"
+    ],
+    "can_export_feedback": [
+      "national_admin"
+    ],
+    "can_export_server_logs": [
+      "national_admin"
+    ],
+    "can_access_directly": [
+      "national_admin"
+    ],
+    "can_view_analytics": [
+      "district_admin",
+      "analytics"
+    ],
+    "can_view_data_records": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "gateway",
+      "supervisor"
+    ],
+    "can_view_unallocated_data_records": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "supervisor"
+    ],
+    "can_edit": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "supervisor"
+    ],
+    "can_update_messages": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "supervisor"
+    ],
+    "can_create_records": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "supervisor"
+    ],
+    "can_view_tasks_tab": [
+      "national_admin",
+      "district_admin",
+      "supervisor"
+    ],
+    "can_configure": [
+      "national_admin"
+    ],
+    "can_view_reports_tab": [
+      "national_admin"
+    ],
+    "can_view_analytics_tab": [
+      "national_admin",
+      "district_admin"
+    ],
+    "can_view_contacts_tab": [
+      "national_admin",
+      "district_admin",
+      "supervisor"
+    ],
+    "can_logout": [
+      "national_admin",
+      "supervisor"
+    ],
+    "can_edit_profile": [
+      "national_admin"
+    ],
+    "can_view_users": [
+      "national_admin"
+    ],
+    "can_update_users": [
+      "national_admin"
+    ],
+    "can_update_people": [
+      "national_admin"
+    ],
+    "can_update_places": [
+      "national_admin"
+    ],
+    "can_create_users": [
+      "national_admin"
+    ],
+    "can_create_people": [
+      "national_admin",
+      "district_admin"
+    ],
+    "can_create_places": [
+      "national_admin",
+      "district_admin"
+    ],
+    "can_view_tasks": [
+      "district_admin",
+      "supervisor"
+    ],
+    "can_view_messages": [],
+    "can_view_messages_tab": [],
+    "can_view_reports": [
+      "national_admin",
+      "district_admin",
+      "supervisor"
+    ],
+    "can_view_contacts": [
+      "national_admin",
+      "district_admin",
+      "supervisor"
+    ],
+    "can_delete_reports": [],
+    "can_bulk_delete_reports": [],
+    "can_delete_contacts": [],
+    "can_delete_messages": [],
+    "can_delete_users": [],
+    "can_access_gateway_api": [],
+    "can_log_out_on_android": [
+      "national_admin",
+      "supervisor"
+    ],
+    "can_view_message_action": [],
+    "can_view_call_action": [
+      "national_admin",
+      "district_admin"
+    ],
+    "can_verify_reports": [],
+    "can_view_last_visited_date": [
+      "national_admin",
+      "district_admin",
+      "supervisor"
+    ],
+    "can_write_wealth_quintiles": [],
+    "can_update_reports": [
+      "national_admin",
+      "district_admin",
+      "supervisor"
+    ],
+    "can_edit_verification": [],
+    "can_view_outgoing_messages": [],
+    "can_export_all": [
+      "national_admin"
+    ]
+  },
+  "setup_complete": true,
+  "roles": {
+    "national_admin": {
+      "name": "usertype.national-manager"
+    },
+    "district_admin": {
+      "name": "usertype.district-manager",
+      "offline": true
+    },
+    "supervisor": {
+      "name": "usertype.supervisor",
+      "offline": true
+    }
+  },
+  "locales": [
+    {
+      "code": "en",
+      "name": "English"
+    },
+    {
+      "code": "sw",
+      "name": "Swahili"
+    }
+  ],
+  "locale": "en",
+  "locale_outgoing": "en",
+  "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=2&_locale=en#/generic-anc.json",
+  "date_format": "ddd, MMM Do, YYYY",
+  "reported_date_format": "ddd, MMM Do, YYYY [at] h:mm A",
+  "forms_only_mode": false,
+  "default_responses": {
+    "start_date": "1970-01-01"
+  },
+  "district_admins_access_unallocated_messages": false,
+  "default_country_code": 256,
+  "gateway_number": "+256754234567",
+  "outgoing_phone_replace": {
+    "match": "",
+    "replace": ""
+  },
+  "outgoing_phone_filters": [
+    {
+      "match": "",
+      "replace": ""
+    }
+  ],
+  "schedule_morning_hours": 6,
+  "schedule_morning_minutes": 0,
+  "schedule_evening_hours": 20,
+  "schedule_evening_minutes": 0,
+  "synthetic_date": "",
+  "id_format": "1111",
+  "contact_display_short": "clinic.name",
+  "statistics_submission": "none",
+  "statistics_submission_number": "",
+  "kujua-reporting": [
+    {
+      "code": "",
+      "reporting_freq": "weekly"
+    }
+  ],
+  "anc_forms": {
+    "registration": "",
+    "registrationLmp": "ANCR",
+    "visit": "ANCV",
+    "delivery": "D",
+    "flag": "F"
+  },
+  "alerts": [
+    {
+      "form": "",
+      "condition": "",
+      "message": "",
+      "recipient": ""
+    }
+  ],
+  "reminders": [
+    {
+      "form": "",
+      "text_expression": "",
+      "cron": "",
+      "mute_after_form_for": "",
+      "message": ""
+    }
+  ],
+  "registrations": [
+    {
+      "form": "",
+      "fields": [
+        {
+          "field_name": "",
+          "title": ""
+        }
+      ],
+      "help": "",
+      "events": [
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "",
+          "bool_expr": ""
+        }
+      ],
+      "validations": {
+        "join_responses": false,
+        "list": [
+          {
+            "property": "",
+            "rule": "",
+            "message": [
+              {
+                "content": "",
+                "locale": ""
+              }
+            ]
+          }
+        ]
+      },
+      "messages": [
+        {
+          "message": [
+            {
+              "content": "",
+              "locale": ""
+            }
+          ],
+          "recipient": ""
+        }
+      ]
+    }
+  ],
+  "patient_reports": [
+    {
+      "form": "",
+      "name": "",
+      "format": "",
+      "silence_type": "",
+      "silence_for": "",
+      "fields": [
+        {
+          "field_name": "",
+          "title": ""
+        }
+      ],
+      "validations": {
+        "join_responses": false,
+        "list": [
+          {
+            "property": "",
+            "rule": "",
+            "message": [
+              {
+                "content": "",
+                "locale": ""
+              }
+            ]
+          }
+        ]
+      },
+      "messages": [
+        {
+          "message": [
+            {
+              "content": "",
+              "locale": ""
+            }
+          ],
+          "event_type": "report_accepted",
+          "recipient": ""
+        }
+      ]
+    }
+  ],
+  "notifications": {
+    "off_form": "OFF",
+    "on_form": "ON",
+    "confirm_deactivation": false,
+    "validations": {
+      "join_responses": false,
+      "list": [
+        {
+          "property": "",
+          "rule": "",
+          "message": [
+            {
+              "content": "",
+              "locale": ""
+            }
+          ]
+        }
+      ]
+    },
+    "messages": [
+      {
+        "message": [
+          {
+            "content": "",
+            "locale": ""
+          }
+        ],
+        "event_type": "patient_not_found",
+        "recipient": ""
+      }
+    ]
+  },
+  "contact_types": [
+    {
+      "id": "app_instance",
+      "name_key": "contact.type.app_instance",
+      "group_key": "contact.type.app_instance.plural",
+      "create_key": "contact.type.app_instance.new",
+      "edit_key": "contact.type.place.edit",
+      "icon": "cht-icon",
+      "create_form": "form:contact:app_instance:create",
+      "edit_form": "form:contact:app_instance:edit"
+    },
+    {
+      "id": "district_hospital",
+      "name_key": "contact.type.district_hospital",
+      "group_key": "contact.type.district_hospital.plural",
+      "create_key": "contact.type.district_hospital.new",
+      "edit_key": "contact.type.place.edit",
+      "parents": [
+        "app_instance"
+      ],
+      "icon": "medic-district-hospital",
+      "create_form": "form:contact:district_hospital:create",
+      "edit_form": "form:contact:district_hospital:edit"
+    },
+    {
+      "id": "health_center",
+      "name_key": "contact.type.health_center",
+      "group_key": "contact.type.health_center.plural",
+      "create_key": "contact.type.health_center.new",
+      "edit_key": "contact.type.place.edit",
+      "parents": [
+        "district_hospital"
+      ],
+      "icon": "medic-health-center",
+      "create_form": "form:contact:health_center:create",
+      "edit_form": "form:contact:health_center:edit"
+    },
+    {
+      "id": "clinic",
+      "name_key": "contact.type.clinic",
+      "group_key": "contact.type.clinic.plural",
+      "create_key": "contact.type.clinic.new",
+      "edit_key": "contact.type.place.edit",
+      "parents": [
+        "health_center"
+      ],
+      "icon": "medic-clinic",
+      "create_form": "form:contact:clinic:create",
+      "edit_form": "form:contact:clinic:edit",
+      "count_visits": true
+    },
+    {
+      "id": "person",
+      "name_key": "contact.type.person",
+      "group_key": "contact.type.person.plural",
+      "create_key": "contact.type.person.new",
+      "edit_key": "contact.type.person.edit",
+      "primary_contact_key": "clinic.field.contact",
+      "parents": [
+        "app_instance",
+        "district_hospital",
+        "health_center",
+        "clinic"
+      ],
+      "icon": "medic-person",
+      "create_form": "form:contact:person:create",
+      "edit_form": "form:contact:person:edit",
+      "person": true,
+      "sort_by_dob": true
+    }
+  ],
+  "transitions": {
+    "accept_patient_reports": false,
+    "conditional_alerts": false,
+    "default_responses": false,
+    "update_sent_by": false,
+    "registration": false,
+    "update_clinics": false,
+    "update_notifications": false,
+    "update_scheduled_reports": false,
+    "update_sent_forms": false,
+    "generate_patient_id_on_people": false,
+    "death_reporting": true,
+    "mark_for_outbound": false,
+    "muting": true
+  },
+  "death_reporting": {
+    "mark_deceased_forms": ["death_report"],
+    "date_field": "fields.date_of_death"
+  },
+  "muting": {
+    "mute_forms": [
+      "mute"
+    ],
+    "unmute_forms": [
+      "unmute"
+    ]
+  },
+  "replication_depth": [
+    { 
+      "role": "supervisor",
+      "depth": 1,
+      "report_depth": 1
+    }
+  ],
+  "replications": [
+    {
+      "fromSuffix": "user-[^\\-]+-meta",
+      "toSuffix": "users-meta",
+      "text_expression": "",
+      "cron": "0 2 * * *"
+    }
+  ],
+  "purge": {
+    "text_expression": "",
+    "run_every_days": 7,
+    "cron": "0 1 * * SAT",
+    "fn": "function (userCtx, contact, reports) {\n\n    const filteredReports = [];\n    const { _id: mostRecentContactReportId } = getMostRecentContactReport(reports) || {};\n\n    function getMostRecentContactReport (reports) {\n      let result = null;\n      reports.forEach(function (report) {\n        if (!report.deleted && (!result || report.reported_date > result.reported_date)) {\n          result = report;\n        }\n      });\n      return result;\n    }\n\n    function addIfNotFiltered (ids) {\n      for (const id of ids) {\n        if (!filteredReports.includes(id) && id !== mostRecentContactReportId) {\n          filteredReports.push(id);\n        }\n      }\n    }\n\n    function timestampAt (days) {\n      return Date.now() - (1000 * 60 * 60 * 24 * days);\n    }\n\n    const timestampAt365 = timestampAt(365);\n\n    const formsToBePurged = [\n      'pregnancy_visit',\n      'pregnancy',\n      'assessment',\n      'assessment_follow_up',\n      'postnatal_care',\n      'family_survey',\n      'muac_follow_up',\n      'family_planning',\n      'immunization_follow_up'\n    ];\n\n    for (const formToBePurged of formsToBePurged) {\n      addIfNotFiltered(\n        reports\n          .filter(r => r.form === formToBePurged && r.reported_date < timestampAt365)\n          .map(r => r._id));\n    }\n\n    return filteredReports;\n  }"
+  }
+}
