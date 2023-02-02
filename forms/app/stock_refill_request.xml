@@ -24,9 +24,7 @@
           <refill_group>
             <stock_status/>
             <known_requested_items/>
-            <other_Items jr:template="">
-              <other_items_name/>
-            </other_Items>
+            <any_other/>
           </refill_group>
           <meta tag="hidden">
             <instanceID/>
@@ -40,14 +38,13 @@
       <bind nodeset="/stock_refill_request/inputs/contact/_id" type="db:health_center" required="true()"/>
       <bind nodeset="/stock_refill_request/inputs/contact/name" type="string"/>
       <bind nodeset="/stock_refill_request/refill_group/stock_status" type="select1" required="true()"/>
-      <bind nodeset="/stock_refill_request/refill_group/known_requested_items" type="select" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes'"/>
-      <bind nodeset="/stock_refill_request/refill_group/other_Items" relevant=" /stock_refill_request/refill_group/stock_status ='yes'"/>
-      <bind nodeset="/stock_refill_request/refill_group/other_Items/other_items_name" type="string" required="true()"/>
+      <bind nodeset="/stock_refill_request/refill_group/known_requested_items" type="select" relevant=" /stock_refill_request/refill_group/stock_status ='yes'" required="true()"/>
+      <bind nodeset="/stock_refill_request/refill_group/any_other" type="string" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'other')" required="true()"/>
       <bind nodeset="/stock_refill_request/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
     </model>
   </h:head>
   <h:body class="pages">
-    <group appearance="field-list" ref="/stock_refill_request/inputs">
+    <group appearance="horizontal" ref="/stock_refill_request/inputs">
       <label>Patient</label>
       <input appearance="hidden" ref="/stock_refill_request/inputs/source">
         <label>Source</label>
@@ -65,7 +62,7 @@
         </input>
       </group>
     </group>
-    <group ref="/stock_refill_request/refill_group">
+    <group appearance="Field-list" ref="/stock_refill_request/refill_group">
       <label>Stock Refill</label>
       <select1 ref="/stock_refill_request/refill_group/stock_status">
         <label>Do you have low stock for some of the items?</label>
@@ -78,7 +75,7 @@
           <value>no</value>
         </item>
       </select1>
-      <select ref="/stock_refill_request/refill_group/known_requested_items">
+      <select appearance="horizontal" ref="/stock_refill_request/refill_group/known_requested_items">
         <label>Select the item you need to refill.</label>
         <item>
           <label>First Line Anti-Malarial (ACT – Coartem)</label>
@@ -132,15 +129,14 @@
           <label>Gloves</label>
           <value>gloves</value>
         </item>
+        <item>
+          <label>Other</label>
+          <value>other</value>
+        </item>
       </select>
-      <group ref="/stock_refill_request/refill_group/other_Items">
-        <label>Other Items</label>
-        <repeat nodeset="/stock_refill_request/refill_group/other_Items">
-          <input ref="/stock_refill_request/refill_group/other_Items/other_items_name">
-            <label>item</label>
-          </input>
-        </repeat>
-      </group>
+      <input ref="/stock_refill_request/refill_group/any_other">
+        <label>Specify Other</label>
+      </input>
     </group>
   </h:body>
 </h:html>
