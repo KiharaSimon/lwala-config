@@ -14,17 +14,36 @@
                 <message/>
               </location>
             </meta>
-            <source>user</source>
+            <source/>
             <source_id/>
             <contact>
-              <_id>0</_id>
+              <_id/>
               <name/>
+              <contact>
+                <name/>
+                <phone/>
+                <parent>
+                  <_id/>
+                  <parent>
+                    <name/>
+                  </parent>
+                </parent>
+              </contact>
             </contact>
           </inputs>
           <refill_group>
             <stock_status/>
             <known_requested_items/>
-            <any_other/>
+            <act_quantity_requested/>
+            <zinc_quantity_requested/>
+            <amoxicillin_quantity_requested/>
+            <condoms_quantity_requested/>
+            <contraceptives_quantity_requested/>
+            <sayana_quantity_requested/>
+            <other_choices jr:template="">
+              <any_other/>
+              <other_quantity_requested/>
+            </other_choices>
           </refill_group>
           <meta tag="hidden">
             <instanceID/>
@@ -32,37 +51,69 @@
         </stock_refill_request>
       </instance>
       <instance id="contact-summary"/>
-      <bind nodeset="/stock_refill_request/inputs" relevant="./source='user'"/>
+      <bind nodeset="/stock_refill_request/inputs" relevant="./source = 'user'"/>
       <bind nodeset="/stock_refill_request/inputs/source" type="string"/>
       <bind nodeset="/stock_refill_request/inputs/source_id" type="string"/>
-      <bind nodeset="/stock_refill_request/inputs/contact/_id" type="db:health_center" required="true()"/>
+      <bind nodeset="/stock_refill_request/inputs/contact/_id" type="db:health_center"/>
       <bind nodeset="/stock_refill_request/inputs/contact/name" type="string"/>
+      <bind nodeset="/stock_refill_request/inputs/contact/contact/name" type="string"/>
+      <bind nodeset="/stock_refill_request/inputs/contact/contact/phone" type="string"/>
+      <bind nodeset="/stock_refill_request/inputs/contact/contact/parent/_id" type="string"/>
+      <bind nodeset="/stock_refill_request/inputs/contact/contact/parent/parent/name" type="string"/>
       <bind nodeset="/stock_refill_request/refill_group/stock_status" type="select1" required="true()"/>
-      <bind nodeset="/stock_refill_request/refill_group/known_requested_items" type="select" relevant=" /stock_refill_request/refill_group/stock_status ='yes'" required="true()"/>
-      <bind nodeset="/stock_refill_request/refill_group/any_other" type="string" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'other')" required="true()"/>
+      <bind nodeset="/stock_refill_request/refill_group/known_requested_items" type="select" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes'"/>
+      <bind nodeset="/stock_refill_request/refill_group/act_quantity_requested" type="int" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'ACT')"/>
+      <bind nodeset="/stock_refill_request/refill_group/zinc_quantity_requested" type="int" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'zinc')"/>
+      <bind nodeset="/stock_refill_request/refill_group/amoxicillin_quantity_requested" type="int" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'amoxicillin')"/>
+      <bind nodeset="/stock_refill_request/refill_group/condoms_quantity_requested" type="int" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'condoms')"/>
+      <bind nodeset="/stock_refill_request/refill_group/contraceptives_quantity_requested" type="int" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'contraceptives')"/>
+      <bind nodeset="/stock_refill_request/refill_group/sayana_quantity_requested" type="int" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'sayana')"/>
+      <bind nodeset="/stock_refill_request/refill_group/other_choices" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'other')"/>
+      <bind nodeset="/stock_refill_request/refill_group/other_choices/any_other" type="string" required="true()" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'other')"/>
+      <bind nodeset="/stock_refill_request/refill_group/other_choices/other_quantity_requested" type="int"/>
       <bind nodeset="/stock_refill_request/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
     </model>
   </h:head>
   <h:body class="pages">
-    <group appearance="horizontal" ref="/stock_refill_request/inputs">
-      <label>Patient</label>
+    <group appearance="field-list" ref="/stock_refill_request/inputs">
+      <label>CHV Area</label>
       <input appearance="hidden" ref="/stock_refill_request/inputs/source">
         <label>Source</label>
+        <hint>user</hint>
       </input>
       <input appearance="hidden" ref="/stock_refill_request/inputs/source_id">
         <label>Source ID</label>
       </input>
       <group ref="/stock_refill_request/inputs/contact">
-        <label></label>
         <input appearance="db-object" ref="/stock_refill_request/inputs/contact/_id">
-          <label></label>
+          <label>What is the CHv's area?</label>
         </input>
         <input appearance="hidden" ref="/stock_refill_request/inputs/contact/name">
           <label>Name</label>
         </input>
+        <group ref="/stock_refill_request/inputs/contact/contact">
+          <input appearance="hidden" ref="/stock_refill_request/inputs/contact/contact/name">
+            <label>CHV Name</label>
+          </input>
+          <input appearance="hidden" ref="/stock_refill_request/inputs/contact/contact/phone">
+            <label>Phone</label>
+          </input>
+          <group ref="/stock_refill_request/inputs/contact/contact/parent">
+            <label>NO LABEL</label>
+            <input appearance="db-object" ref="/stock_refill_request/inputs/contact/contact/parent/_id">
+              <label>NO LABEL</label>
+            </input>
+            <group ref="/stock_refill_request/inputs/contact/contact/parent/parent">
+              <label>NO LABEL</label>
+              <input ref="/stock_refill_request/inputs/contact/contact/parent/parent/name">
+                <label>NO LABEL</label>
+              </input>
+            </group>
+          </group>
+        </group>
       </group>
     </group>
-    <group appearance="Field-list" ref="/stock_refill_request/refill_group">
+    <group appearance="field-list" ref="/stock_refill_request/refill_group">
       <label>Stock Refill</label>
       <select1 ref="/stock_refill_request/refill_group/stock_status">
         <label>Do you have low stock for some of the items?</label>
@@ -90,26 +141,6 @@
           <value>amoxicillin</value>
         </item>
         <item>
-          <label>Malaria RDTs</label>
-          <value>malaria_rdts</value>
-        </item>
-        <item>
-          <label>Progestin Only Pill</label>
-          <value>pop</value>
-        </item>
-        <item>
-          <label>Injectible DMPA</label>
-          <value>dmpa</value>
-        </item>
-        <item>
-          <label>Misoprostol Tablets</label>
-          <value>misoprostol</value>
-        </item>
-        <item>
-          <label>Combined Oral Contraceptive (COC)</label>
-          <value>coc</value>
-        </item>
-        <item>
           <label>Condoms</label>
           <value>condoms</value>
         </item>
@@ -118,25 +149,43 @@
           <value>contraceptives</value>
         </item>
         <item>
-          <label>Rectal Artesunate</label>
-          <value>rectal</value>
-        </item>
-        <item>
           <label>Sayana Press</label>
           <value>sayana</value>
-        </item>
-        <item>
-          <label>Gloves</label>
-          <value>gloves</value>
         </item>
         <item>
           <label>Other</label>
           <value>other</value>
         </item>
       </select>
-      <input ref="/stock_refill_request/refill_group/any_other">
-        <label>Specify Other</label>
+      <input ref="/stock_refill_request/refill_group/act_quantity_requested">
+        <label>Quantity requested ACT</label>
       </input>
+      <input ref="/stock_refill_request/refill_group/zinc_quantity_requested">
+        <label>Quantity requested Zinc</label>
+      </input>
+      <input ref="/stock_refill_request/refill_group/amoxicillin_quantity_requested">
+        <label>Quantity requested Amoxicillin</label>
+      </input>
+      <input ref="/stock_refill_request/refill_group/condoms_quantity_requested">
+        <label>Quantity requested Condoms</label>
+      </input>
+      <input ref="/stock_refill_request/refill_group/contraceptives_quantity_requested">
+        <label>Quantity requested Contraceptives</label>
+      </input>
+      <input ref="/stock_refill_request/refill_group/sayana_quantity_requested">
+        <label>Quantity requested Sayana Press</label>
+      </input>
+      <group ref="/stock_refill_request/refill_group/other_choices">
+        <label></label>
+        <repeat nodeset="/stock_refill_request/refill_group/other_choices" appearance="field-list">
+          <input ref="/stock_refill_request/refill_group/other_choices/any_other">
+            <label>Specify Other</label>
+          </input>
+          <input ref="/stock_refill_request/refill_group/other_choices/other_quantity_requested">
+            <label>Quantity requested <output value=" /stock_refill_request/refill_group/other_choices/any_other "/></label>
+          </input>
+        </repeat>
+      </group>
     </group>
   </h:body>
 </h:html>
