@@ -84,17 +84,24 @@ const getStockItemSelected = () => {
       const valueArray = [];
       const report = latestStockSummary[k];
       for (let i = 0; i < stockItems.length; i++){
-        
-        const mappedValuesAndItems = {
+        const label = getField(report, `p_is_${stockItems[i]}_selected`);
+        const value = getFieldValue(report, `p_${stockItems[i]}_requested`);
+        let mappedValuesAndItems;
+
+        if (label !== '' && value !== 0){
+          mappedValuesAndItems = {
           
          
-          // eslint-disable-next-line no-undef
-          label: getField(report, `p_is_${stockItems[i]}_selected`),
-          value: getFieldValue(report, `p_${stockItems[i]}_requested`)
+            // eslint-disable-next-line no-undef
+            label: label,
+            value: value
+            
+          };
+          valueArray.push(mappedValuesAndItems);
           
-        };
-        valueArray.push(mappedValuesAndItems);
+        }
         
+       
       }
 
       return valueArray;
