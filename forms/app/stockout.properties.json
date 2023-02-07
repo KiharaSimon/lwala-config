@@ -1,0 +1,9 @@
+{
+    "title": "StockOut",
+    "icon": "area",
+    "context": {    
+        "person": false,
+        "place": false,
+        "expression": "!!contact"
+    }
+}

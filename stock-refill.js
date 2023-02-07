@@ -79,6 +79,7 @@ const getStockItemSelected = () => {
   // eslint-disable-next-line no-undef
   const latestStockSummary = getLatestStockSummary(reports);
 
+  // eslint-disable-next-line guard-for-in
   for (const k in latestStockSummary) {
     if (Object.prototype.hasOwnProperty.call(latestStockSummary, k)) {
       const valueArray = [];
@@ -86,29 +87,21 @@ const getStockItemSelected = () => {
       for (let i = 0; i < stockItems.length; i++){
         const label = getField(report, `p_is_${stockItems[i]}_selected`);
         const value = getFieldValue(report, `p_${stockItems[i]}_requested`);
-        let mappedValuesAndItems;
-
-        if (label !== '' && value !== 0){
-          mappedValuesAndItems = {
-          
-         
-            // eslint-disable-next-line no-undef
-            label: label,
-            value: value
-            
-          };
-          valueArray.push(mappedValuesAndItems);
-          
-        }
         
-       
+        valueArray.push(label);
+        valueArray.push(value);
+          
       }
-
+        
       return valueArray;
-      
+       
     }
+
+    
+      
   }
 };
+
 
 export { getStockItemSelected};
 
