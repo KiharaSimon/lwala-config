@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 // import stockItems from './stock-list';
 const Nootils = require('cht-nootils/src/nootils');
@@ -81,6 +82,8 @@ const getStockItemSelected = (reports) => {
   }
 };
 
+
+
 // eslint-disable-next-line no-undef
 const isSupervisor = () => user.parent && user.parent.type === 'district_hospital';
 // const isVHT = () => user.parent && user.parent.type === 'health_center';
@@ -97,7 +100,7 @@ module.exports = [
       );
     },
     // eslint-disable-next-line no-unused-vars
-    resolvedIf: (c) => {
+    resolvedIf: () => {
       return false;
     },
     actions: [
