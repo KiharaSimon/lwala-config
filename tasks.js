@@ -1,5 +1,85 @@
-/* eslint-disable no-unused-vars */
-const { getStockItemSelected } = require("./stock-refill");
+
+// import stockItems from './stock-list';
+const Nootils = require('cht-nootils/src/nootils');
+global.Utils = Nootils();
+
+const stockItems = [
+  'act',
+  'zinc',
+  'amoxicillin',
+  'condoms',
+  'contraceptives',
+  'sayana'
+];
+const getField = (report, fieldPath) => ['fields', ...(fieldPath || '').split('.')]
+  .reduce((prev, fieldName) => {
+    if (prev === undefined) { return undefined; }
+    return prev[fieldName];
+  }, report);
+
+
+const getFieldValue = (report, fieldName) => {
+  // eslint-disable-next-line no-undef
+  const fieldValue = getField(report, fieldName);
+  const value = parseFloat(fieldValue);
+  if (!Number.isNaN(value)) {
+    return value;
+  }
+  return 0;
+};
+
+const getLatestStockSummary = (reports) => {
+  const latestReports = {};
+  for (let i = 0; i < reports.length; i++) {
+    const report = reports[i];
+    if (report.form !== 'commodities-approval-request') {
+      continue;
+    }
+
+    const createdByDoc = report.created_by_doc;
+
+    if (!latestReports[createdByDoc]) {
+      latestReports[createdByDoc] = report;
+    }
+
+    const latestReport = latestReports[createdByDoc];
+
+    if (report.reported_date > latestReport.reported_date) {
+      latestReports[createdByDoc] = report;
+    }
+  }
+  return latestReports;
+};
+
+
+
+const getStockItemSelected = (reports) => {
+  
+  // eslint-disable-next-line no-undef
+  const latestStockSummary = getLatestStockSummary(reports);
+
+  // eslint-disable-next-line guard-for-in
+  for (const k in latestStockSummary) {
+    if (Object.prototype.hasOwnProperty.call(latestStockSummary, k)) {
+      const valueArray = [];
+      const report = latestStockSummary[k];
+      for (let i = 0; i < stockItems.length; i++){
+        const label = getField(report, `p_is_${stockItems[i]}_selected`);
+        const value = getFieldValue(report, `p_${stockItems[i]}_requested`);
+        
+        valueArray.push(label);
+        valueArray.push(value);
+          
+      }
+        
+      return valueArray;
+       
+    }
+
+    
+      
+  }
+};
 
 // eslint-disable-next-line no-undef
 const isSupervisor = () => user.parent && user.parent.type === 'district_hospital';
@@ -16,18 +96,20 @@ module.exports = [
         c.contact.type === 'health_center' && isSupervisor() 
       );
     },
+    // eslint-disable-next-line no-unused-vars
     resolvedIf: (c) => {
-      
+      return false;
     },
     actions: [
       {
         type: 'report',
         form: 'stockout',
         label: 'task.stockout.label',
+        // eslint-disable-next-line no-unused-vars
         modifyContent: (content, c) => {
           
-          const stockValues = getStockItemSelected();
-          const stockValuesIndividual = stockValues.map((item) => item.value);
+          const stockValues = getStockItemSelected(c.reports);
+          const stockValuesIndividual = stockValues.map((item) => item);
       
           content.act_stock_selected = stockValuesIndividual[0];
           content.act_stock_value_requeted = stockValuesIndividual[1];
