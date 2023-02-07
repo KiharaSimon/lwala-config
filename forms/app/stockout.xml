@@ -54,11 +54,17 @@
           <vht_stock_details>
             <note_low_stock/>
             <n_act/>
+            <act_given/>
             <n_zinc/>
+            <zinc_given/>
             <n_amoxicillin/>
+            <amoxicillin_given/>
             <n_condoms/>
+            <condoms_given/>
             <n_contraceptives/>
+            <contraceptives_given/>
             <n_sayana/>
+            <sayana_given/>
           </vht_stock_details>
           <meta tag="hidden">
             <instanceID/>
@@ -100,12 +106,18 @@
       <bind nodeset="/stockout/requested_contraceptives" type="string" calculate=" /stockout/inputs/contraceptives_stock_value_requested "/>
       <bind nodeset="/stockout/requested_sayana" type="string" calculate=" /stockout/inputs/sayana_stock_value_requested "/>
       <bind nodeset="/stockout/vht_stock_details/note_low_stock" readonly="true()" type="string"/>
-      <bind nodeset="/stockout/vht_stock_details/n_act" readonly="true()" type="string" required="true()" relevant=" /stockout/act_was_selected  = 'yes'"/>
-      <bind nodeset="/stockout/vht_stock_details/n_zinc" readonly="true()" type="string" required="true()" relevant=" /stockout/zinc_was_selected  = 'yes'"/>
-      <bind nodeset="/stockout/vht_stock_details/n_amoxicillin" readonly="true()" type="string" required="true()" relevant=" /stockout/amoxicillin_was_selected  = 'yes'"/>
-      <bind nodeset="/stockout/vht_stock_details/n_condoms" readonly="true()" type="string" required="true()" relevant=" /stockout/condoms_was_selected  = 'yes'"/>
-      <bind nodeset="/stockout/vht_stock_details/n_contraceptives" readonly="true()" type="string" required="true()" relevant=" /stockout/contraceptives_was_selected  = 'yes'"/>
-      <bind nodeset="/stockout/vht_stock_details/n_sayana" readonly="true()" type="string" required="true()" relevant=" /stockout/sayana_was_selected  = 'yes'"/>
+      <bind nodeset="/stockout/vht_stock_details/n_act" readonly="true()" type="string" relevant=" /stockout/act_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/act_given" type="int" relevant=" /stockout/act_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/n_zinc" readonly="true()" type="string" relevant=" /stockout/zinc_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/zinc_given" type="int" relevant=" /stockout/zinc_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/n_amoxicillin" readonly="true()" type="string" relevant=" /stockout/amoxicillin_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/amoxicillin_given" type="int" relevant=" /stockout/amoxicillin_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/n_condoms" readonly="true()" type="string" relevant=" /stockout/condoms_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/condoms_given" type="int" relevant=" /stockout/condoms_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/n_contraceptives" readonly="true()" type="string" relevant=" /stockout/contraceptives_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/contraceptives_given" type="int" relevant=" /stockout/contraceptives_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/n_sayana" readonly="true()" type="string" relevant=" /stockout/sayana_was_selected  = 'yes'" required="true()"/>
+      <bind nodeset="/stockout/vht_stock_details/sayana_given" type="int" relevant=" /stockout/sayana_was_selected  = 'yes'"/>
       <bind nodeset="/stockout/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
     </model>
   </h:head>
@@ -175,22 +187,40 @@
         <label>&lt;b&gt;<output value=" /stockout/place_name "/>&lt;/b&gt; has requested this items</label>
       </input>
       <input ref="/stockout/vht_stock_details/n_act">
-        <label>&lt;b&gt;ACT: <output value=" /stockout/requested_act "/> blisters&lt;/b&gt;</label>
+        <label>&lt;b&gt;Requested → ACT: <output value=" /stockout/requested_act "/> blisters&lt;/b&gt;</label>
+      </input>
+      <input ref="/stockout/vht_stock_details/act_given">
+        <label>ACT blisters given</label>
       </input>
       <input ref="/stockout/vht_stock_details/n_zinc">
-        <label>&lt;b&gt;Zinc: <output value=" /stockout/requested_zinc "/> tablets&lt;/b&gt;</label>
+        <label>&lt;b&gt;Requested → Zinc: <output value=" /stockout/requested_zinc "/> tablets&lt;/b&gt;</label>
+      </input>
+      <input ref="/stockout/vht_stock_details/zinc_given">
+        <label>Zinc tablet given</label>
       </input>
       <input ref="/stockout/vht_stock_details/n_amoxicillin">
-        <label>&lt;b&gt;Amoxicillin: <output value=" /stockout/requested_amoxicillin "/> tablets&lt;/b&gt;</label>
+        <label>&lt;b&gt;Requested → Amoxicillin: <output value=" /stockout/requested_amoxicillin "/> tablets&lt;/b&gt;</label>
+      </input>
+      <input ref="/stockout/vht_stock_details/amoxicillin_given">
+        <label>Amoxicillin tablets given</label>
       </input>
       <input ref="/stockout/vht_stock_details/n_condoms">
-        <label>&lt;b&gt;Condoms: <output value=" /stockout/requested_condoms "/> pieces&lt;/b&gt;</label>
+        <label>&lt;b&gt;Requested → Condoms: <output value=" /stockout/requested_condoms "/> pieces&lt;/b&gt;</label>
+      </input>
+      <input ref="/stockout/vht_stock_details/condoms_given">
+        <label>Condom pieces given</label>
       </input>
       <input ref="/stockout/vht_stock_details/n_contraceptives">
-        <label>&lt;b&gt;Contraceptives: <output value=" /stockout/requested_contraceptives "/> tablets&lt;/b&gt;</label>
+        <label>&lt;b&gt;Requested → Contraceptives: <output value=" /stockout/requested_contraceptives "/> tablets&lt;/b&gt;</label>
+      </input>
+      <input ref="/stockout/vht_stock_details/contraceptives_given">
+        <label>Contraceptives tablet given</label>
       </input>
       <input ref="/stockout/vht_stock_details/n_sayana">
-        <label>&lt;b&gt;Sayana: <output value=" /stockout/requested_sayana "/> pieces &lt;/b&gt;</label>
+        <label>&lt;b&gt;Requested → Sayana: <output value=" /stockout/requested_sayana "/> pieces &lt;/b&gt;</label>
+      </input>
+      <input ref="/stockout/vht_stock_details/sayana_given">
+        <label>Sayana Press pieces given</label>
       </input>
     </group>
   </h:body>
