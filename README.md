@@ -24,7 +24,6 @@ Created a chw area form called  stock_refill which collects the information of i
 
 
 ## Images and demos
-![Screenshot from 2023-02-07 15-52-51](https://user-images.githubusercontent.com/31708087/217255550-5228743c-4c2e-45f5-87da-a6389b5b85f1.png)
 ![Screenshot from 2023-02-07 15-53-05](https://user-images.githubusercontent.com/31708087/217255792-b785ecc8-09c5-4ea0-9561-5a984f43529e.png)
 ![Screenshot from 2023-02-07 15-53-32](https://user-images.githubusercontent.com/31708087/217255796-007a4227-648e-42e7-8cf5-c2dd0b846608.png)
 ![Screenshot from 2023-02-07 15-53-53](https://user-images.githubusercontent.com/31708087/217255800-39446748-b807-47ea-a50d-108ef8fead80.png)
