@@ -100,9 +100,25 @@ module.exports = [
       );
     },
     // eslint-disable-next-line no-unused-vars
-    resolvedIf: () => {
-      return false;
+    resolvedIf: function (contact, report, event, dueDate) {
+      return Utils.isFormSubmittedInWindow(
+        contact.reports,
+        'stockout',
+        Utils.addDate(dueDate, -event.start).getTime(),
+        Utils.addDate(dueDate, event.end + 1).getTime()
+      );
     },
+    // (c, reports) => {
+    // const latestStockoutReport = Utils.getMostRecentReport(c.reports, 'stockout');
+    // const actGiven = Utils.getField(latestStockoutReport, 'vht_stock_details.act_given');
+    // const zincGiven = Utils.getField(latestStockoutReport, 'vht_stock_details.zinc_given');
+    // const amoxicillinGiven = Utils.getField(latestStockoutReport, 'vht_stock_details.amoxicillin_given');
+    // const condomsGiven = Utils.getField(latestStockoutReport, 'vht_stock_details.condoms_given');
+    // const contraceptivesGiven = Utils.getField(latestStockoutReport, 'vht_stock_details.contraceptives_given');
+    // const sayanaGiven = Utils.getField(latestStockoutReport, 'vht_stock_details.sayana_given');
+
+    // return latestStockoutReport
+    // },
     actions: [
       {
         type: 'report',
