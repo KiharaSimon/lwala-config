@@ -104,8 +104,8 @@ module.exports = [
       return Utils.isFormSubmittedInWindow(
         contact.reports,
         'stockout',
-        Utils.addDate(dueDate, -event.start).getTime(),
-        Utils.addDate(dueDate, event.end + 1).getTime()
+        0,
+        0
       );
     },
     // (c, reports) => {

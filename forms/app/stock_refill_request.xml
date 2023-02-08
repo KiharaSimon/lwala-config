@@ -36,7 +36,7 @@
           <chv_uuid/>
           <supervisor_id/>
           <branch_id/>
-          <chv_commuity_unit/>
+          <chv_community_unit/>
           <recently_requested/>
           <is_act_selected/>
           <is_zinc_selected/>
@@ -114,7 +114,7 @@
       <bind nodeset="/stock_refill_request/chv_uuid" type="string" calculate="../inputs/contact/contact/_id"/>
       <bind nodeset="/stock_refill_request/supervisor_id" type="string" calculate="../inputs/contact/supervisor"/>
       <bind nodeset="/stock_refill_request/branch_id" type="string" calculate="../inputs/contact/parent/_id"/>
-      <bind nodeset="/stock_refill_request/chv_commuity_unit" type="string" calculate="../inputs/contact/community_unit"/>
+      <bind nodeset="/stock_refill_request/chv_community_unit" type="string" calculate="../inputs/contact/community_unit"/>
       <bind nodeset="/stock_refill_request/recently_requested" type="string" calculate="instance('contact-summary')/context/recentlyRequested"/>
       <bind nodeset="/stock_refill_request/is_act_selected" type="string" calculate="if((selected( /stock_refill_request/refill_group/known_requested_items , 'ACT')), 'ACT', ' ')"/>
       <bind nodeset="/stock_refill_request/is_zinc_selected" type="string" calculate="if((selected( /stock_refill_request/refill_group/known_requested_items , 'zinc')), 'zinc', ' ')"/>
@@ -131,14 +131,14 @@
       <bind nodeset="/stock_refill_request/refill_group/name" readonly="true()" type="string"/>
       <bind nodeset="/stock_refill_request/refill_group/stock_status" type="select1" required="true()"/>
       <bind nodeset="/stock_refill_request/refill_group/known_requested_items" type="select" relevant=" /stock_refill_request/refill_group/stock_status ='yes'" required="true()"/>
-      <bind nodeset="/stock_refill_request/refill_group/act_quantity_requested" type="int" jr:constraintMsg="Value should be greater 0 and less than 100" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'ACT')" constraint=".&gt;=0 and .&lt;100"/>
-      <bind nodeset="/stock_refill_request/refill_group/zinc_quantity_requested" type="int" jr:constraintMsg="Value should be greater 0 and less than 100" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'zinc')" constraint=".&gt;=0 and .&lt;100"/>
-      <bind nodeset="/stock_refill_request/refill_group/amoxicillin_quantity_requested" type="int" jr:constraintMsg="Value should be greater 0 and less than 100" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'amoxicillin')" constraint=".&gt;=0 and .&lt;100"/>
-      <bind nodeset="/stock_refill_request/refill_group/condoms_quantity_requested" type="int" jr:constraintMsg="Value should be greater 0 and less than 100" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'condoms')" constraint=".&gt;=0 and .&lt;100"/>
-      <bind nodeset="/stock_refill_request/refill_group/contraceptives_quantity_requested" type="int" jr:constraintMsg="Value should be greater 0 and less than 100" required="true()" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'contraceptives')" constraint=".&gt;=0 and .&lt;100"/>
-      <bind nodeset="/stock_refill_request/refill_group/sayana_quantity_requested" type="int" jr:constraintMsg="Value should be greater 0 and less than 100" required="true()" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'sayana')" constraint=".&gt;=0 and .&lt;100"/>
+      <bind nodeset="/stock_refill_request/refill_group/act_quantity_requested" type="int" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'ACT')" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100" constraint=".&gt;=0 and .&lt;100"/>
+      <bind nodeset="/stock_refill_request/refill_group/zinc_quantity_requested" type="int" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'zinc')" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100" constraint=".&gt;=0 and .&lt;100"/>
+      <bind nodeset="/stock_refill_request/refill_group/amoxicillin_quantity_requested" type="int" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'amoxicillin')" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100" constraint=".&gt;=0 and .&lt;100"/>
+      <bind nodeset="/stock_refill_request/refill_group/condoms_quantity_requested" type="int" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'condoms')" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100" constraint=".&gt;=0 and .&lt;100"/>
+      <bind nodeset="/stock_refill_request/refill_group/contraceptives_quantity_requested" type="int" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'contraceptives')" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100" constraint=".&gt;=0 and .&lt;100"/>
+      <bind nodeset="/stock_refill_request/refill_group/sayana_quantity_requested" type="int" relevant="selected( /stock_refill_request/refill_group/known_requested_items , 'sayana')" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100" constraint=".&gt;=0 and .&lt;100"/>
       <bind nodeset="/stock_refill_request/refill_group/other_choices" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'other')"/>
-      <bind nodeset="/stock_refill_request/refill_group/other_choices/any_other" type="string" jr:constraintMsg="Value should be greater 0 and less than 100" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'other')" required="true()"/>
+      <bind nodeset="/stock_refill_request/refill_group/other_choices/any_other" type="string" relevant=" /stock_refill_request/refill_group/stock_status ='yes' and selected( /stock_refill_request/refill_group/known_requested_items , 'other')" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100"/>
       <bind nodeset="/stock_refill_request/refill_group/other_choices/other_quantity_requested" type="int" required="true()" jr:constraintMsg="Value should be greater 0 and less than 100" constraint=".&gt;=0 and .&lt;100"/>
       <bind nodeset="/stock_refill_request/additional_doc/place_id" type="string" calculate=" /stock_refill_request/patient_id "/>
       <bind nodeset="/stock_refill_request/additional_doc/type" type="string" calculate="&quot;data_record&quot;"/>
@@ -201,8 +201,8 @@
     </group>
     <group appearance="field-list" ref="/stock_refill_request/refill_group">
       <label>Stock Refill</label>
-      <input appearance="db-object bind-id-only" ref="/stock_refill_request/refill_group/name">
-        <label><output value=" /stock_refill_request/chv_commuity_unit "/></label>
+      <input ref="/stock_refill_request/refill_group/name">
+        <label><output value=" /stock_refill_request/chv_area_name "/></label>
       </input>
       <select1 ref="/stock_refill_request/refill_group/stock_status">
         <label>Do you have low stock for some of the items?</label>
