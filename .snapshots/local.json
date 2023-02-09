@@ -1,6 +1,6 @@
 {
   "form:stock_refill_request": {
-    "localhost/medic": "3GdB8Bloxu6flWQ8aWqDPA=="
+    "localhost/medic": "I57mpZAuLmoWhLOVksyyzQ=="
   },
   "form:contact:clinic:create": {
     "localhost/medic": "+28wBENuq4DvXAaLKm2+6w=="
@@ -30,6 +30,6 @@
     "localhost/medic": "5S09IlIqcqPEOYx/9yzgrg=="
   },
   "form:stockout": {
-    "localhost/medic": "drll00fU+IoeI6seUthiyg=="
+    "localhost/medic": "DdIarAuKSVMCDOeICbjxbg=="
   }
 }

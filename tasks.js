@@ -88,6 +88,22 @@ const getStockItemSelected = (reports) => {
 const isSupervisor = () => user.parent && user.parent.type === 'district_hospital';
 // const isVHT = () => user.parent && user.parent.type === 'health_center';
 
+
+const formInSubmittedWindowMatchesFields = (contact, event, dueDate, form, fields) => {
+  let result = false;
+  const start = Utils.addDate(dueDate, -event.start).getTime();
+  const end = Utils.addDate(dueDate, event.end + 1).getTime();
+  contact.reports.forEach(function (report) {
+    if (!result && report.form === form) {
+      if (report.reported_date >= start && report.reported_date <= end &&
+        (!fields || (report.fields && Utils.fieldsMatch(report, fields)))) {
+        result = true;
+      }
+    }
+  });
+  return result;
+};
+
 module.exports = [
   {
     name: `stockout`,
@@ -100,14 +116,10 @@ module.exports = [
       );
     },
     // eslint-disable-next-line no-unused-vars
-    resolvedIf: function (contact, report, event, dueDate) {
-      return Utils.isFormSubmittedInWindow(
-        contact.reports,
-        'stockout',
-        0,
-        0
-      );
-    },
+    resolvedIf: (contact, report, event, dueDate) =>
+      (formInSubmittedWindowMatchesFields(contact, event, dueDate, 'stockout',
+        { 'inputs.task_name': 'stockout' })),
+    
     // (c, reports) => {
     // const latestStockoutReport = Utils.getMostRecentReport(c.reports, 'stockout');
     // const actGiven = Utils.getField(latestStockoutReport, 'vht_stock_details.act_given');
